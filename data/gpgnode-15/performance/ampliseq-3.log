@@ -1,0 +1,3019 @@
+
+ N E X T F L O W   ~  version 24.10.4
+
+NOTE: Your local project version looks outdated - a different revision is available in the remote repository [8f139cecd9]
+Launching `https://github.com/nf-core/ampliseq` [loquacious_murdock] DSL2 - revision: 0473e157ac [master]
+
+WARN: No DADA2 cutoffs were specified (`--trunclenf` & `--trunclenr`), therefore reads will be truncated where median quality drops below 35 (defined by `--trunc_qmin`) but at least a fraction of 0.75 (defined by `--trunc_rmin`) of the reads will be retained.
+The chosen cutoffs do not account for required overlap for merging, therefore DADA2 might have poor merging efficiency or even fail.
+
+WARN: Conda or mamba is enabled, any steps involving QIIME2 are not available. Use a container engine instead of conda to enable all software.
+WARN: Access to undefined parameter `monochromeLogs` -- Initialise it to a default value eg. `params.monochromeLogs = some_value`
+
+
+------------------------------------------------------
+                                        ,--./,-.
+        ___     __   __   __   ___     /,-._.--~'
+  |\ | |__  __ /  ` /  \ |__) |__         }  {
+  | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                        `._,._,'
+  nf-core/ampliseq v2.11.0-g0473e15
+------------------------------------------------------
+Core Nextflow options
+  revision                  : master
+  runName                   : loquacious_murdock
+  launchDir                 : /users/grad/kathleen/ichnos-gpgnode-15
+  workDir                   : /users/grad/kathleen/ichnos-gpgnode-15/work
+  projectDir                : /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq
+  userName                  : kathleen
+  profile                   : test_full,conda
+  configFiles               : 
+
+Main arguments
+  input                     : https://raw.githubusercontent.com/nf-core/test-datasets/ampliseq/samplesheets/Samplesheet_full.tsv
+  FW_primer                 : GTGYCAGCMGCCGCGGTAA
+  RV_primer                 : GGACTACNVGGGTWTCTAAT
+  metadata                  : https://raw.githubusercontent.com/nf-core/test-datasets/ampliseq/samplesheets/Metadata_full.tsv
+  outdir                    : out
+
+Read trimming and quality filtering
+  trunc_qmin                : 35
+
+Taxonomic database
+  dada_ref_taxonomy         : rdp
+  qiime_ref_taxonomy        : greengenes85
+
+ASV filtering
+  min_frequency             : 30
+  min_samples               : 3
+
+Downstream analysis
+  metadata_category_barplot : habitat
+  qiime_adonis_formula      : habitat
+  picrust                   : true
+
+Differential abundance analysis
+  ancom                     : true
+  ancombc                   : true
+
+Max job request options
+  max_memory                : 16.GB
+
+Institutional config options
+  config_profile_name       : Full test profile
+  config_profile_description: Full test dataset to check pipeline function
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+------------------------------------------------------
+If you use nf-core/ampliseq for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.1493841
+  https://doi.org/10.3389/fmicb.2020.550420
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/ampliseq/blob/master/CITATIONS.md
+------------------------------------------------------
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 1 more processes waiting for tasks…
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 2 more processes waiting for tasks…
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::sed=4.7 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-e9df3e1229ffdcc8b4b9e48f04ba2d94]
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::sed=4.7 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-e9df3e1229ffdcc8b4b9e48f04ba2d94]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070130_1.fastq.gz
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::sed=4.7 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-e9df3e1229ffdcc8b4b9e48f04ba2d94]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070130_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::sed=4.7 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-e9df3e1229ffdcc8b4b9e48f04ba2d94]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070130_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      -
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::sed=4.7 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-e9df3e1229ffdcc8b4b9e48f04ba2d94]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070130_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+
+[-        ] NFC…E_AMPLISEQ:AMPLISEQ:RENAME_RAW_DATA_FILES | 0 of 6
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 0 of 1
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070130_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+
+
+executor >  local (5)
+[3c/3ae38f] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070134) | 0 of 8
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 0 of 1
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070130_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+
+executor >  local (7)
+[2c/acde73] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070133) | 0 of 8
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 0 of 1
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+
+
+executor >  local (9)
+[09/6e50bd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070141) | 4 of 8
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 0 of 1
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+
+executor >  local (9)
+[09/6e50bd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070141) | 4 of 8
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+
+executor >  local (10)
+[70/8cc5f9] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070151) | 4 of 9
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+
+executor >  local (10)
+[a4/bbc39c] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070130) | 7 of 9
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+
+executor >  local (10)
+[09/6e50bd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070141) | 8 of 9
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+
+executor >  local (10)
+[70/8cc5f9] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10070151) | 9 of 9
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+
+executor >  local (11)
+[c8/7778dd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102392) | 9 of 10
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+
+executor >  local (11)
+[c8/7778dd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102392) | 9 of 10
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+
+executor >  local (11)
+[c8/7778dd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102392) | 10 of 10
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+
+executor >  local (11)
+[c8/7778dd] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102392) | 10 of 10
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+
+executor >  local (12)
+[d9/7e95bb] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102393) | 10 of 11
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+
+executor >  local (12)
+[d9/7e95bb] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102393) | 10 of 11
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+
+executor >  local (12)
+[d9/7e95bb] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102393) | 11 of 11
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070133_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+
+executor >  local (12)
+[d9/7e95bb] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102393) | 11 of 11
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102394_1.fastq.gz
+
+
+executor >  local (13)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 11 of 12
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102394_1.fastq.gz
+
+
+executor >  local (13)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[-        ] NFC…AMPLISEQ:CUTADAPT_WORKFLOW:CUTADAPT_BASIC -
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070134_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10070149_1.fastq.gz
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../subworkflows/local/../../modules/nf-core/cutadapt/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-ed42305a5397f22c-43a2fa2a7e9bde7c8060e9654089ed6b]
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/fastqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-82021658ad675fed-a3039ef8f770a2096c89b9328aeb1e3f]
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102392_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102393_1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/ampliseq/SRR10102394_1.fastq.gz
+
+executor >  local (15)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[80/0d808c] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070141) | 0 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+
+
+
+
+
+
+executor >  local (16)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[84/dc9dfe] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070131) | 0 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+
+
+
+
+
+
+executor >  local (17)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[80/0d808c] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070141) | 1 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (19)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[d0/546213] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10102394) | 3 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (19)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[d0/546213] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10102394) | 3 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (22)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[1d/9856ad] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070150) | 6 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (22)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[1d/9856ad] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070150) | 6 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (23)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[c2/b0a90c] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070132) | 7 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (25)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[96/57afcf] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070134) | 9 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (25)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[96/57afcf] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070134) | 9 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (25)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[c4/875030] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10102392) | 11 of 12
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (25)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::python=3.8.3 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-9f7c67c7ed50ac9b5d28463bb0039738]
+
+executor >  local (25)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               -
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::python=3.8.3 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-9f7c67c7ed50ac9b5d28463bb0039738]
+Creating env using conda: bioconda::bioconductor-dada2=1.30.0 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-5f8f18139ca3880bfd44c2b2d2d05216]
+
+executor >  local (25)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC               | 0 of 3
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+
+executor >  local (28)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[ef/e0f194] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070134) | 0 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+
+executor >  local (31)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[8c/a498b5] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070149) | 3 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (32)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[8c/4db5ca] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070141) | 4 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (34)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[1b/1ce653] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070130) | 6 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (34)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[1b/1ce653] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070130) | 6 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (35)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[b0/e82d26] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070151) | 7 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (35)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[b0/e82d26] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070151) | 7 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (37)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[1b/1ce653] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070130) | 9 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (37)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[1b/1ce653] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070130) | 9 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (37)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[47/329d35] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102392) | 10 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (37)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[4f/26243f] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10070132) | 11 of 12
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (37)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY1 -
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (39)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[-        ] NFC…EQ:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_STD -
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 0 of 2
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (40)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 0 of 1
+[-        ] NFC…:CUTADAPT_WORKFLOW:CUTADAPT_SUMMARY_MERGE -
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 0 of 2
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (41)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 0 of 1
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 0 of 2
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (41)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 0 of 2
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (41)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[-        ] NFC…SEQ:AMPLISEQ:DADA2_PREPROCESSING:TRUNCLEN -
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::pandas=1.1.5 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-827c9f0b159ed30bc47c1e24ef559fba]
+
+executor >  local (42)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 0 of 2
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (43)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[bd/f392e7] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (FW) | 0 of 2
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (43)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[-        ] NFC…LISEQ:DADA2_PREPROCESSING:DADA2_FILTNTRIM -
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+WARN: Probably everything is fine, but this is a reminder that `--trunclenf` was set automatically to 230 and `--trunclenr` to 200. If this doesnt seem reasonable, then please change `--trunc_qmin` (and `--trunc_rmin`), or set `--trunclenf` and `--trunclenr` directly.
+
+executor >  local (46)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[af/428827] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070149) | 0 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+WARN: Probably everything is fine, but this is a reminder that `--trunclenf` was set automatically to 230 and `--trunclenr` to 200. If this doesnt seem reasonable, then please change `--trunc_qmin` (and `--trunc_rmin`), or set `--trunclenf` and `--trunclenr` directly.
+
+executor >  local (47)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[4b/723f83] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070134) | 1 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (48)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[7d/319d12] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102394) | 2 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (48)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[7d/319d12] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102394) | 2 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (49)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[20/a9dfae] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102393) | 3 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (49)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[20/a9dfae] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102393) | 3 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (50)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[f2/0383c8] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070132) | 4 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (50)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[f2/0383c8] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070132) | 4 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (51)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[35/9ad1f7] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070150) | 5 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (51)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[35/9ad1f7] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070150) | 5 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (52)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[f5/ddeb22] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070133) | 6 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (53)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[86/8bdec0] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070141) | 7 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (54)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[9c/03ea06] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070130) | 8 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (55)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 9 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (55)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[86/8bdec0] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070141) | 10 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (55)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[9c/03ea06] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10070130) | 11 of 12
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (55)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[-        ] NFC…PLISEQ:DADA2_PREPROCESSING:DADA2_QUALITY2 -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR            -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (58)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[74/622be9] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (FW) | 0 of 2
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (58)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[74/622be9] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (FW) | 1 of 2
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (58)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (59)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (59)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA      | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (60)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (61)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (61)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: bioconda::bioconductor-dada2=1.22.0 conda-forge::r-digest=0.6.30 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-48f6bff6fcd618e2551903467cc11e02]
+
+executor >  local (62)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (62)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD      -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY -
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (63)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[-        ] NFC…AMPLISEQ:DADA2_TAXONOMY_WF:DADA2_TAXONOMY | 0 of 1
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: bioconda::barrnap=0.9 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-455de3b141596c7775b7841b6c4d1f13]
+Creating env using conda: bioconda::picrust2=2.5.2 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-1ae4adf144e8d2385f7254caee664df5]
+
+executor >  local (64)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 0 of 1
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: bioconda::barrnap=0.9 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-455de3b141596c7775b7841b6c4d1f13]
+Creating env using conda: bioconda::picrust2=2.5.2 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-1ae4adf144e8d2385f7254caee664df5]
+
+executor >  local (64)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 0 of 1
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+Creating env using conda: bioconda::barrnap=0.9 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-455de3b141596c7775b7841b6c4d1f13]
+Creating env using conda: bioconda::picrust2=2.5.2 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-1ae4adf144e8d2385f7254caee664df5]
+
+executor >  local (64)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAP              | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 0 of 1
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+
+executor >  local (65)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 0 of 1
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+
+
+executor >  local (65)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[-        ] NFC…PLISEQ:DADA2_TAXONOMY_WF:DADA2_ADDSPECIES -
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (66)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:PICRUST              -
+Plus 3 more processes waiting for tasks…
+
+executor >  local (67)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 0 of 1
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 0 of 1
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+Plus 3 more processes waiting for tasks…
+
+executor >  local (67)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[-        ] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       -
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 0 of 1
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+Plus 3 more processes waiting for tasks…
+Creating env using conda: conda-forge::python=3.9 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-b07b307b987575d28cc433967ccaa200]
+
+executor >  local (68)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 0 of 1
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 0 of 1
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (68)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 0 of 1
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+Plus 3 more processes waiting for tasks…
+
+
+executor >  local (68)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+Plus 3 more processes waiting for tasks…
+
+executor >  local (68)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+Plus 3 more processes waiting for tasks…
+Creating env using conda: bioconda::bioconductor-phyloseq=1.46.0 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-48f1ed07130de5f8a9ba02cdd29e4b16]
+
+executor >  local (69)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 0 of 1
+Plus 2 more processes waiting for tasks…
+
+
+executor >  local (69)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 0 of 1
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+Plus 2 more processes waiting for tasks…
+
+
+executor >  local (69)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+Plus 2 more processes waiting for tasks…
+
+executor >  local (69)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+Plus 2 more processes waiting for tasks…
+Creating env using conda: /users/grad/kathleen/.nextflow/assets/nf-core/ampliseq/./workflows/../modules/nf-core/multiqc/environment.yml [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-57af51745d3c9a61-3c79c19229373363894cae5853672dde]
+
+executor >  local (70)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 0 of 1
+Plus 1 more processes waiting for tasks…
+
+
+executor >  local (70)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 1 of 1 ✔
+Plus 1 more processes waiting for tasks…
+
+
+executor >  local (70)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 1 of 1 ✔
+Plus 1 more processes waiting for tasks…
+Creating env using conda: conda-forge::r-base=4.2.3 conda-forge::r-rmarkdown=2.22 conda-forge::r-tidyverse=2.0.0 conda-forge::r-knitr=1.43 conda-forge::r-dt=0.28 conda-forge::r-dtplyr=1.3.1 conda-forge::r-formattable=0.2.1 conda-forge::r-purrr=1.0.1 conda-forge::r-vegan=2.6_4 conda-forge::r-optparse=1.7.3 conda-forge::r-ggplot2=3.4.2 conda-forge::r-dplyr=1.1.2 conda-forge::r-data.table=1.14.8 conda-forge::r-patchwork=1.1.2 [cache /users/grad/kathleen/ichnos-gpgnode-15/work/conda/env-cc46b080491f0c86132d857231719cf9]
+
+executor >  local (71)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 1 of 1 ✔
+[cc/90f392] NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT (1)   | 0 of 1
+
+
+executor >  local (71)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 1 of 1 ✔
+[cc/90f392] NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT (1)   | 1 of 1 ✔
+
+
+executor >  local (71)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 1 of 1 ✔
+[cc/90f392] NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT (1)   | 1 of 1 ✔
+-[nf-core/ampliseq] Pipeline completed successfully-
+
+executor >  local (71)
+[dc/99e6e8] NFC…LISEQ:RENAME_RAW_DATA_FILES (SRR10102394) | 12 of 12 ✔
+[30/883ee4] NFCORE_AMPLISEQ:AMPLISEQ:FASTQC (SRR10102393) | 12 of 12 ✔
+[2e/d2d747] NFC…APT_WORKFLOW:CUTADAPT_BASIC (SRR10070151) | 12 of 12 ✔
+[db/7a4b93] NFC…:CUTADAPT_SUMMARY_STD (cutadapt_standard) | 1 of 1 ✔
+[7a/7e562f] NFC…ARY_MERGE (cutadapt_standard_summary.tsv) | 1 of 1 ✔
+[13/27695f] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY1 (FW) | 2 of 2 ✔
+[1d/a3fb89] NFC…MPLISEQ:DADA2_PREPROCESSING:TRUNCLEN (RV) | 2 of 2 ✔
+[ad/b4630e] NFC…EPROCESSING:DADA2_FILTNTRIM (SRR10102392) | 12 of 12 ✔
+[d4/babb75] NFC…Q:DADA2_PREPROCESSING:DADA2_QUALITY2 (RV) | 2 of 2 ✔
+[02/06cdc4] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_ERR (1)        | 1 of 1 ✔
+[e7/51f297] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_DENOISING (1)  | 1 of 1 ✔
+[97/9b74ac] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_RMCHIMERA (1)  | 1 of 1 ✔
+[5b/a8ab9a] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_STATS (1)      | 1 of 1 ✔
+[44/10b5be] NFCORE_AMPLISEQ:AMPLISEQ:DADA2_MERGE          | 1 of 1 ✔
+[04/ef7094] NFCORE_AMPLISEQ:AMPLISEQ:MERGE_STATS_STD (1)  | 1 of 1 ✔
+[b3/69892b] NFC…MPLISEQ:AMPLISEQ:BARRNAP (ASV_seqs.fasta) | 1 of 1 ✔
+[91/1104e8] NFCORE_AMPLISEQ:AMPLISEQ:BARRNAPSUMMARY       | 1 of 1 ✔
+[ba/3fa577] NFCORE_AMPLISEQ:AMPLISEQ:FORMAT_TAXONOMY      | 1 of 1 ✔
+[26/852653] NFC…ONOMY (ASV_seqs.fasta,assignTaxonomy.fna) | 1 of 1 ✔
+[cd/787a21] NFC…DDSPECIES (ASV_tax.rds,addSpecies.fna.gz) | 1 of 1 ✔
+[0c/0cc2cf] NFC…EQ:PICRUST (ASV_seqs.fasta,ASV_table.tsv) | 1 of 1 ✔
+[8b/35485e] NFC…PLISEQ:PHYLOSEQ_WORKFLOW:PHYLOSEQ (dada2) | 1 of 1 ✔
+[ca/8bfab4] NFCORE_AMPLISEQ:AMPLISEQ:MULTIQC              | 1 of 1 ✔
+[cc/90f392] NFCORE_AMPLISEQ:AMPLISEQ:SUMMARY_REPORT (1)   | 1 of 1 ✔
+-[nf-core/ampliseq] Pipeline completed successfully-
+Completed at: 03-Feb-2025 17:57:32
+Duration    : 1h 50m 57s
+CPU hours   : 11.0
+Succeeded   : 71
+
+
