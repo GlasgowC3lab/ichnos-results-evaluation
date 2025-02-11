@@ -1,0 +1,13 @@
+Carbon Footprint Trace:
+- carbon-intensity: south-scotland-300125-110225
+- power-usage-effectiveness: 1.0
+- power model selected: baseline
+- memory-power-draw: 0.392
+
+Cloud Carbon Footprint Method:
+- Energy Consumption (exc. PUE): 0.027423308467881945kWh
+- Energy Consumption (inc. PUE): 0.027423308467881945kWh
+- Memory Energy Consumption (exc. PUE): 0.0048338578400000005kWh
+- Memory Energy Consumption (inc. PUE): 0.0048338578400000005kWh
+- Carbon Emissions: 1.8884921356824305gCO2e
+Task Runtime: 2863890.0ms
