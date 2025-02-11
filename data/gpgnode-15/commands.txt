@@ -1,0 +1,28 @@
+# Commands for measurements on GPG 15
+
+# Governor: performance 
+
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_15_performance 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 gpg_15_performance 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 gpg_15_performance 30 1.0 0.392
+
+# Linear Power Model: range between 54.88666666666666 - 138.81666666666666 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 linear 30 1.0 0.392
+
+# Governor: powersave 
+
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_15_powersave 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 gpg_15_powersave 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 gpg_15_powersave 30 1.0 0.392
+
+# Linear Power Model: range between 52.949999999999996 - 120.30333333333334 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 linear 30 1.0 0.392
+
+# Baseline: TDP set to 95 (W) / 8 cores -> 11.875 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 baseline 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 baseline 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 baseline 30 1.0 0.392

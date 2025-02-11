@@ -1,0 +1,16 @@
+# Commands for measurements on GPG 16
+
+# Governor: ondemand 
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_16_ondemand 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 gpg_16_ondemand 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 gpg_16_ondemand 30 1.0 0.392
+
+# Linear Power Model: range between 46.21666666666667 - 111.82333333333334 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 linear 30 1.0 0.392
+
+# Baseline: TDP set to 95 (W) / 8 cores -> 11.875 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 baseline 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 baseline 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 baseline 30 1.0 0.392

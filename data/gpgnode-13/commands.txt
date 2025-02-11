@@ -1,7 +1,16 @@
-# Governor: ondemand
-python3 -m src.scripts.IchnosCF ampliseq-1 1 gpg_13_ondemand 60 1.0 0.392
-python3 -m src.scripts.IchnosCF ampliseq-2 1 gpg_13_ondemand 60 1.0 0.392
-python3 -m src.scripts.IchnosCF ampliseq-3 1 gpg_13_ondemand 60 1.0 0.392
+# Commands for measurements on GPG 13
 
-# Ichnos CF Usage: provide trace, ci, min-max watts, interval defaults to 60 minutes, pue defaults to 1.0, memory draw defaults to 0.392
-usage = "Ichnos: python -m src.scripts.IchnosCF <trace-name> <ci-value|ci-file-name> <min-watts> <max-watts> <? interval=60> <? pue=1.0> <? memory-coeff=0.392>"
+# Governor: ondemand 
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_13_ondemand 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 gpg_13_ondemand 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 gpg_13_ondemand 30 1.0 0.392
+
+# Linear Power Model: range between 48.26 - 124.96333333333332 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 linear 30 1.0 0.392
+
+# Baseline: TDP set to 95 (W) / 8 cores -> 11.875 (W)
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 baseline 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 baseline 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 baseline 30 1.0 0.392
