@@ -1,0 +1,57 @@
+# Copy and Paste Block into IchnosCF 
+
+# Nodes 13-16
+TDP: 95W
+per core: 11.875
+
+# Node 22
+TDP: 185W
+per core: 11.5625
+
+# GPG Node 13 - Governor [ondemand]
+node_min_watts = 48.26
+node_max_watts = 124.96333333333332
+tdp_per_core = 11.875
+system_cores = 32
+
+# GPG Node 14 - Governor [performance]
+node_min_watts = 50.56666666666666
+node_max_watts = 125.25
+tdp_per_core = 11.875
+system_cores = 32
+
+# GPG Node 14 - Governor [powersave]
+node_min_watts = 49.413333333333334
+node_max_watts = 105.60666666666667
+tdp_per_core = 11.875
+system_cores = 32
+
+# GPG Node 15 - Governor [performance]
+node_min_watts = 54.88666666666666
+node_max_watts = 138.81666666666666
+tdp_per_core = 11.875
+system_cores = 32
+
+# GPG Node 15 - Governor [powersave]
+node_min_watts = 52.949999999999996
+node_max_watts = 120.30333333333334
+tdp_per_core = 11.875
+system_cores = 32
+
+# GPG Node 16 - Governor [ondemand]
+node_min_watts = 46.21666666666667
+node_max_watts = 111.82333333333334
+tdp_per_core = 11.875
+system_cores = 32
+
+# GPG Node 22 - Governor [performance]
+node_min_watts = 117.37
+node_max_watts = 345.76666666666665
+tdp_per_core = 11.5625
+system_cores = 64
+
+# GPG Node 22 - Governor [powersave]
+node_min_watts = 94.77333333333333
+node_max_watts = 347.1433333333334
+tdp_per_core = 11.5625
+system_cores = 64
