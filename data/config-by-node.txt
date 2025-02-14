@@ -13,45 +13,53 @@ node_min_watts = 48.26
 node_max_watts = 124.96333333333332
 tdp_per_core = 11.875
 system_cores = 32
+node_mem_draw = 0.40268229166666664
 
 # GPG Node 14 - Governor [performance]
 node_min_watts = 50.56666666666666
 node_max_watts = 125.25
 tdp_per_core = 11.875
 system_cores = 32
+node_mem_draw = 0.36736979166666667
 
 # GPG Node 14 - Governor [powersave]
 node_min_watts = 49.413333333333334
 node_max_watts = 105.60666666666667
 tdp_per_core = 11.875
 system_cores = 32
+node_mem_draw = 0.35888020833333334
 
 # GPG Node 15 - Governor [performance]
 node_min_watts = 54.88666666666666
 node_max_watts = 138.81666666666666
 tdp_per_core = 11.875
 system_cores = 32
+node_mem_draw = 0.4091666666666667
 
 # GPG Node 15 - Governor [powersave]
 node_min_watts = 52.949999999999996
 node_max_watts = 120.30333333333334
 tdp_per_core = 11.875
 system_cores = 32
+node_mem_draw = 0.40458333333333335
 
 # GPG Node 16 - Governor [ondemand]
 node_min_watts = 46.21666666666667
 node_max_watts = 111.82333333333334
 tdp_per_core = 11.875
 system_cores = 32
+node_mem_draw = 0.34205729166666665
 
 # GPG Node 22 - Governor [performance]
 node_min_watts = 117.37
 node_max_watts = 345.76666666666665
 tdp_per_core = 11.5625
 system_cores = 64
+node_mem_draw = 0.016953125
 
 # GPG Node 22 - Governor [powersave]
 node_min_watts = 94.77333333333333
 node_max_watts = 347.1433333333334
 tdp_per_core = 11.5625
 system_cores = 64
+node_mem_draw = 0.016041666666666666
