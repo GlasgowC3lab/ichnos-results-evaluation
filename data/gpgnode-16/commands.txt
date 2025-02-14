@@ -5,6 +5,11 @@ python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_16_o
 python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 gpg_16_ondemand 30 1.0 0.392
 python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 gpg_16_ondemand 30 1.0 0.392
 
+# Fitted Linear Model
+python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_16_ondemand_linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 gpg_16_ondemand_linear 30 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 gpg_16_ondemand_linear 30 1.0 0.392
+
 # Linear Power Model: range between 46.21666666666667 - 111.82333333333334 (W)
 python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 linear 30 1.0 0.392
 python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 linear 30 1.0 0.392
