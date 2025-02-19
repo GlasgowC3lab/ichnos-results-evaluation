@@ -21,6 +21,11 @@ python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 baseline
 python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 baseline 30 1.0 0.392
 python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 baseline 30 1.0 0.392
 
+# Marginal Data (uk-marg-010125-110225)
+python3 -m src.scripts.IchnosCF ampliseq-1 uk-marg-010125-110225 gpg_15_performance_linear 5 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 uk-marg-010125-110225 gpg_15_performance_linear 5 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 uk-marg-010125-110225 gpg_15_performance_linear 5 1.0 0.392
+
 # Governor: powersave 
 
 python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 gpg_15_powersave 30 1.0 0.392
@@ -41,3 +46,8 @@ python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 linear 3
 python3 -m src.scripts.IchnosCF ampliseq-1 south-scotland-300125-110225 baseline 30 1.0 0.392
 python3 -m src.scripts.IchnosCF ampliseq-2 south-scotland-300125-110225 baseline 30 1.0 0.392
 python3 -m src.scripts.IchnosCF ampliseq-3 south-scotland-300125-110225 baseline 30 1.0 0.392
+
+# Marginal Data (uk-marg-010125-110225)
+python3 -m src.scripts.IchnosCF ampliseq-1 uk-marg-010125-110225 gpg_15_powersave_linear 5 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-2 uk-marg-010125-110225 gpg_15_powersave_linear 5 1.0 0.392
+python3 -m src.scripts.IchnosCF ampliseq-3 uk-marg-010125-110225 gpg_15_powersave_linear 5 1.0 0.392
