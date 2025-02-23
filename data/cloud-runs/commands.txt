@@ -1,0 +1,2 @@
+# Estimate using Cloud Values configured in script: (node_min_watts * cores) + (cpu_usage / 100) * ((node_max_watts * cores) - (node_min_watts * cores))
+python3 -m src.scripts.IchnosCF nanoseq-gcb 136 linear 30 1.0 0.392
