@@ -1,0 +1,1 @@
+2025-10-23 06:41:20	3h 59m 59s	desperate_brahmagupta	OK	f421ddc35d81a0561685927c03e03995	d57b6df5-590c-4dad-bdd0-1859a4ed67d5	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config

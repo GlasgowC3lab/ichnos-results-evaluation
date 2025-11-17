@@ -1,0 +1,1 @@
+2025-11-13 14:19:03	4h 9m 9s	exotic_northcutt	OK	f421ddc35d81a0561685927c03e03995	2f6f55c0-f803-44a2-a81b-478259c230e4	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config

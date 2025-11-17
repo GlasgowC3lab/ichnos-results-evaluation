@@ -1,0 +1,1 @@
+2025-11-13 10:10:39	4h 7m 17s	special_archimedes	OK	f421ddc35d81a0561685927c03e03995	8a199b44-b4e7-49f6-b8c6-3792ea7a1063	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config

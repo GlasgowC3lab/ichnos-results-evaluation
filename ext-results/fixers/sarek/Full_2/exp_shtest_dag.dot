@@ -1,0 +1,2778 @@
+digraph "exp_shtest_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 [label="NFCORE_SAREK:PREPARE_GENOME:BWAMEM1_INDEX"];
+v2 -> v39 [label="ch_fasta"];
+
+v3 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v3 -> v48 [label="bcftools_annotations"];
+
+v4 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v5 [shape=point];
+v4 -> v5 [label="bcftools_header_lines"];
+
+v6 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v6 -> v7;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v8 [shape=point];
+v7 -> v8 [label="cf_chrom_len"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v9 -> v10;
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v10 -> v52 [label="dbsnp"];
+
+v11 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v11 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v13 [shape=point];
+v12 -> v13 [label="fasta_fai"];
+
+v14 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v14 -> v15;
+
+v15 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v15 -> v56 [label="germline_resource"];
+
+v16 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v16 -> v17;
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v17 -> v64 [label="known_indels"];
+
+v18 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v18 -> v19;
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v19 -> v60 [label="known_snps"];
+
+v20 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v20 -> v21;
+
+v21 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v22 [shape=point];
+v21 -> v22 [label="mappability"];
+
+v23 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v23 -> v24;
+
+v24 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v24 -> v68 [label="pon"];
+
+v25 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v25 -> v26;
+
+v26 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v27 [shape=point];
+v26 -> v27 [label="sentieon_dnascope_model"];
+
+v28 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v29 [shape=point];
+v28 -> v29 [label="versions"];
+
+v30 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromList"];
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v30 -> v31 [label="ch_from_samplesheet"];
+
+v31 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v31 -> v32;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v32 -> v33;
+
+v32 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="tap"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v32 -> v35 [label="ch_with_patient_sample"];
+
+v33 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v33 -> v34;
+
+v34 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v34 -> v35;
+
+v35 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v35 -> v36;
+
+v36 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v36 -> v234 [label="input_sample"];
+
+v37 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v37 -> v226 [label="versions"];
+
+v38 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v38 -> v78 [label="versions"];
+
+v39 [label="NFCORE_SAREK:PREPARE_GENOME:BWAMEM1_INDEX"];
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v39 -> v118;
+
+v39 [label="NFCORE_SAREK:PREPARE_GENOME:BWAMEM1_INDEX"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v39 -> v103;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 [label="NFCORE_SAREK:PREPARE_GENOME:BWAMEM2_INDEX"];
+v2 -> v40 [label="ch_fasta"];
+
+v40 [label="NFCORE_SAREK:PREPARE_GENOME:BWAMEM2_INDEX"];
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v40 -> v120;
+
+v40 [label="NFCORE_SAREK:PREPARE_GENOME:BWAMEM2_INDEX"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v40 -> v104;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 [label="NFCORE_SAREK:PREPARE_GENOME:DRAGMAP_HASHTABLE"];
+v2 -> v41 [label="ch_fasta"];
+
+v41 [label="NFCORE_SAREK:PREPARE_GENOME:DRAGMAP_HASHTABLE"];
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v41 -> v122;
+
+v41 [label="NFCORE_SAREK:PREPARE_GENOME:DRAGMAP_HASHTABLE"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v41 -> v105;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 [label="NFCORE_SAREK:PREPARE_GENOME:GATK4_CREATESEQUENCEDICTIONARY"];
+v2 -> v42 [label="ch_fasta"];
+
+v42 [label="NFCORE_SAREK:PREPARE_GENOME:GATK4_CREATESEQUENCEDICTIONARY"];
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v42 -> v127;
+
+v42 [label="NFCORE_SAREK:PREPARE_GENOME:GATK4_CREATESEQUENCEDICTIONARY"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v42 -> v106;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v43 [label="NFCORE_SAREK:PREPARE_GENOME:MSISENSORPRO_SCAN"];
+v2 -> v43 [label="ch_fasta"];
+
+v43 [label="NFCORE_SAREK:PREPARE_GENOME:MSISENSORPRO_SCAN"];
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v43 -> v140;
+
+v43 [label="NFCORE_SAREK:PREPARE_GENOME:MSISENSORPRO_SCAN"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v43 -> v107;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 [label="NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v2 -> v45 [label="ch_fasta"];
+
+v44 [shape=point,label="",fixedsize=true,width=0.1];
+v45 [label="NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v44 -> v45;
+
+v45 [label="NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v47 [shape=point];
+v45 -> v47;
+
+v45 [label="NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v45 -> v129;
+
+v45 [label="NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v46 [shape=point];
+v45 -> v46;
+
+v45 [label="NFCORE_SAREK:PREPARE_GENOME:SAMTOOLS_FAIDX"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v45 -> v108;
+
+v48 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v48 -> v49;
+
+v49 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_BCFTOOLS_ANNOTATIONS"];
+v49 -> v50;
+
+v50 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_BCFTOOLS_ANNOTATIONS"];
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v50 -> v115;
+
+v50 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_BCFTOOLS_ANNOTATIONS"];
+v51 [shape=point];
+v50 -> v51;
+
+v50 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_BCFTOOLS_ANNOTATIONS"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v50 -> v109;
+
+v52 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v52 -> v53;
+
+v53 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_DBSNP"];
+v53 -> v54;
+
+v54 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_DBSNP"];
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v54 -> v124;
+
+v54 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_DBSNP"];
+v55 [shape=point];
+v54 -> v55;
+
+v54 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_DBSNP"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v54 -> v110;
+
+v56 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v56 -> v57;
+
+v57 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_GERMLINE_RESOURCE"];
+v57 -> v58;
+
+v58 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_GERMLINE_RESOURCE"];
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v58 -> v131;
+
+v58 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_GERMLINE_RESOURCE"];
+v59 [shape=point];
+v58 -> v59;
+
+v58 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_GERMLINE_RESOURCE"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v58 -> v111;
+
+v60 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v60 -> v61;
+
+v61 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_SNPS"];
+v61 -> v62;
+
+v62 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_SNPS"];
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v62 -> v134;
+
+v62 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_SNPS"];
+v63 [shape=point];
+v62 -> v63;
+
+v62 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_SNPS"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v62 -> v113;
+
+v64 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v64 -> v65;
+
+v65 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_INDELS"];
+v65 -> v66;
+
+v66 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_INDELS"];
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v66 -> v137;
+
+v66 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_INDELS"];
+v67 [shape=point];
+v66 -> v67;
+
+v66 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_KNOWN_INDELS"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v66 -> v112;
+
+v68 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v68 -> v69;
+
+v69 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_PON"];
+v69 -> v70;
+
+v70 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_PON"];
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v70 -> v142;
+
+v70 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_PON"];
+v71 [shape=point];
+v70 -> v71;
+
+v70 [label="NFCORE_SAREK:PREPARE_GENOME:TABIX_PON"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v70 -> v114;
+
+v72 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v72 -> v73;
+
+v73 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v73 -> v74;
+
+v74 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_ALLELES"];
+v74 -> v75;
+
+v75 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_ALLELES"];
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v75 -> v76;
+
+v75 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_ALLELES"];
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v75 -> v78;
+
+v76 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v77 [shape=point];
+v76 -> v77 [label="allele_files"];
+
+v78 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v78 -> v85 [label="versions"];
+
+v79 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v79 -> v80;
+
+v80 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v80 -> v81;
+
+v81 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_LOCI"];
+v81 -> v82;
+
+v82 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_LOCI"];
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v82 -> v83;
+
+v82 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_LOCI"];
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v82 -> v85;
+
+v83 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v84 [shape=point];
+v83 -> v84 [label="loci_files"];
+
+v85 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v85 -> v92 [label="versions"];
+
+v86 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v86 -> v87;
+
+v87 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v87 -> v88;
+
+v88 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_GC"];
+v88 -> v89;
+
+v89 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_GC"];
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v89 -> v90;
+
+v89 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_GC"];
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v89 -> v92;
+
+v90 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v91 [shape=point];
+v90 -> v91 [label="gc_file"];
+
+v92 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v92 -> v99 [label="versions"];
+
+v93 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v93 -> v94;
+
+v94 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v94 -> v95;
+
+v95 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_RT"];
+v95 -> v96;
+
+v96 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_RT"];
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v96 -> v97;
+
+v96 [label="NFCORE_SAREK:PREPARE_GENOME:UNZIP_RT"];
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v96 -> v99;
+
+v97 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v98 [shape=point];
+v97 -> v98 [label="rt_file"];
+
+v99 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v99 -> v103 [label="versions"];
+
+v100 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v100 -> v101;
+
+v101 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v102 [shape=point];
+v101 -> v102 [label="chr_files"];
+
+v103 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v103 -> v104 [label="versions"];
+
+v104 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v104 -> v105 [label="versions"];
+
+v105 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v105 -> v106 [label="versions"];
+
+v106 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v106 -> v107 [label="versions"];
+
+v107 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v107 -> v108 [label="versions"];
+
+v108 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v108 -> v109 [label="versions"];
+
+v109 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v109 -> v110 [label="versions"];
+
+v110 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v110 -> v111 [label="versions"];
+
+v111 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v111 -> v112 [label="versions"];
+
+v112 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v112 -> v113 [label="versions"];
+
+v113 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v113 -> v114 [label="versions"];
+
+v114 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v114 -> v226 [label="versions"];
+
+v115 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v115 -> v116;
+
+v116 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v117 [shape=point];
+v116 -> v117 [label="bcftools_annotations_tbi"];
+
+v118 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v119 [shape=point];
+v118 -> v119 [label="bwa"];
+
+v120 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v121 [shape=point];
+v120 -> v121 [label="bwamem2"];
+
+v122 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v123 [shape=point];
+v122 -> v123 [label="hashtable"];
+
+v124 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v124 -> v125;
+
+v125 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v126 [shape=point];
+v125 -> v126 [label="dbsnp_tbi"];
+
+v127 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v128 [shape=point];
+v127 -> v128 [label="dict"];
+
+v129 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v130 [shape=point];
+v129 -> v130 [label="fasta_fai"];
+
+v131 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v131 -> v132;
+
+v132 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v133 [shape=point];
+v132 -> v133 [label="germline_resource_tbi"];
+
+v134 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v134 -> v135;
+
+v135 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v136 [shape=point];
+v135 -> v136 [label="known_snps_tbi"];
+
+v137 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v137 -> v138;
+
+v138 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v139 [shape=point];
+v138 -> v139 [label="known_indels_tbi"];
+
+v140 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v141 [shape=point];
+v140 -> v141 [label="msisensorpro_scan"];
+
+v142 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v142 -> v143;
+
+v143 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v144 [shape=point];
+v143 -> v144 [label="pon_tbi"];
+
+v145 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v145 -> v146;
+
+v146 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v146 -> v147;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 -> v468 [label="dict"];
+
+v148 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v148 -> v149;
+
+v149 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v149 -> v150;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v150 -> v374 [label="fasta_fai"];
+
+v151 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v151 -> v152;
+
+v152 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v152 -> v153;
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v153 -> v356 [label="index"];
+
+v154 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v154 -> v155;
+
+v155 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v155 -> v156;
+
+v156 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v157 [shape=point];
+v156 -> v157 [label="bwamem2"];
+
+v158 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v158 -> v159;
+
+v159 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v159 -> v160;
+
+v160 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v161 [shape=point];
+v160 -> v161 [label="dragmap"];
+
+v162 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v162 -> v163;
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v163 -> v176 [label="dbsnp_tbi"];
+
+v164 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v164 -> v165;
+
+v165 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v166 [shape=point];
+v165 -> v166 [label="germline_resource_tbi"];
+
+v167 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v167 -> v168;
+
+v168 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v168 -> v176 [label="known_indels_tbi"];
+
+v169 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v169 -> v170;
+
+v170 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v170 -> v181 [label="known_snps_tbi"];
+
+v171 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v171 -> v172;
+
+v172 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v173 [shape=point];
+v172 -> v173 [label="pon_tbi"];
+
+v17 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v17 -> v174 [label="known_indels"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 -> v174 [label="dbsnp"];
+
+v174 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v174 -> v175;
+
+v175 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v175 -> v469 [label="known_sites"];
+
+v176 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v176 -> v177;
+
+v177 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v177 -> v469 [label="known_sites_tbi"];
+
+v10 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v10 -> v178 [label="dbsnp"];
+
+v19 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v19 -> v178 [label="known_snps"];
+
+v178 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v178 -> v179;
+
+v179 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v180 [shape=point];
+v179 -> v180 [label="known_sites_snps"];
+
+v163 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v163 -> v181 [label="dbsnp_tbi"];
+
+v181 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="concat"];
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v181 -> v182;
+
+v182 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v183 [shape=point];
+v182 -> v183 [label="known_sites_snps_tbi"];
+
+v184 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v184 -> v196 [label="versions"];
+
+v185 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v186 [shape=point];
+v185 -> v186 [label="intervals_bed"];
+
+v187 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v188 [shape=point];
+v187 -> v188 [label="intervals_bed_gz_tbi"];
+
+v189 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v190 [shape=point];
+v189 -> v190 [label="intervals_combined"];
+
+v191 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v191 -> v192;
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED"];
+v192 -> v214 [label="intervals_combined"];
+
+v193 [shape=point,label="",fixedsize=true,width=0.1];
+v195 [label="NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED"];
+v193 -> v195 [label="intervals"];
+
+v194 [shape=point,label="",fixedsize=true,width=0.1];
+v195 [label="NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED"];
+v194 -> v195 [label="nucleotides_per_second"];
+
+v195 [label="NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED"];
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v195 -> v197 [label="intervals_bed"];
+
+v195 [label="NFCORE_SAREK:PREPARE_INTERVALS:CREATE_INTERVALS_BED"];
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v195 -> v196;
+
+v196 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v196 -> v213 [label="versions"];
+
+v197 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v197 -> v198;
+
+v198 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v198 -> v199;
+
+v199 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toSortedList"];
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v199 -> v200;
+
+v200 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="flatten"];
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v200 -> v201;
+
+v201 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collate"];
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v201 -> v202;
+
+v202 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v202 -> v203;
+
+v203 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v203 -> v204;
+
+v204 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v204 -> v205;
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 -> v206 [label="intervals"];
+
+v206 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v207 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT"];
+v206 -> v207;
+
+v207 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT"];
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v207 -> v209;
+
+v207 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT"];
+v208 [shape=point];
+v207 -> v208;
+
+v207 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_SPLIT"];
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v207 -> v213;
+
+v209 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v209 -> v210;
+
+v210 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v210 -> v211;
+
+v211 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v211 -> v212;
+
+v212 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v212 -> v224 [label="intervals_bed_gz_tbi"];
+
+v213 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v213 -> v216 [label="versions"];
+
+v214 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED"];
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v214 -> v220;
+
+v214 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED"];
+v215 [shape=point];
+v214 -> v215;
+
+v214 [label="NFCORE_SAREK:PREPARE_INTERVALS:TABIX_BGZIPTABIX_INTERVAL_COMBINED"];
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v214 -> v216;
+
+v216 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v216 -> v227 [label="versions"];
+
+v192 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v192 -> v217 [label="intervals_combined"];
+
+v217 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v217 -> v218;
+
+v218 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v219 [shape=point];
+v218 -> v219 [label="intervals_bed_combined_for_variant_calling"];
+
+v220 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v220 -> v221;
+
+v221 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v222 [shape=point];
+v221 -> v222 [label="intervals_bed_gz_tbi_combined"];
+
+v205 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v205 -> v223 [label="intervals"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v223 -> v464 [label="intervals"];
+
+v224 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v225 [shape=point];
+v224 -> v225 [label="intervals_bed_gz_tbi_and_num_intervals"];
+
+v226 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v226 -> v227 [label="versions"];
+
+v227 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v228 [shape=point];
+v227 -> v228 [label="versions"];
+
+v229 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v606 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v229 -> v606 [label="ch_multiqc_files"];
+
+v230 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v231 [shape=point];
+v230 -> v231 [label="multiqc_report"];
+
+v232 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v232 -> v330 [label="reports"];
+
+v233 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v233 -> v332 [label="versions"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 -> v240;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 -> v235;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v234 -> v254 [label="input"];
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v237 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_FQ_PAIR"];
+v234 -> v237;
+
+v235 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v235 -> v324 [label="fastq_gz"];
+
+v236 [shape=point,label="",fixedsize=true,width=0.1];
+v237 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_FQ_PAIR"];
+v236 -> v237 [label="write_one_fastq_gz"];
+
+v237 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_FQ_PAIR"];
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v237 -> v239;
+
+v237 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_FQ_PAIR"];
+v238 [shape=point];
+v237 -> v238;
+
+v239 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v239 -> v325 [label="one_fastq_gz_from_spring"];
+
+v240 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v242 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R1_FQ"];
+v240 -> v242;
+
+v241 [shape=point,label="",fixedsize=true,width=0.1];
+v242 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R1_FQ"];
+v241 -> v242 [label="write_one_fastq_gz"];
+
+v242 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R1_FQ"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v242 -> v248;
+
+v242 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R1_FQ"];
+v243 [shape=point];
+v242 -> v243;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v234 -> v244;
+
+v244 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v246 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R2_FQ"];
+v244 -> v246;
+
+v245 [shape=point,label="",fixedsize=true,width=0.1];
+v246 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R2_FQ"];
+v245 -> v246 [label="write_one_fastq_gz"];
+
+v246 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R2_FQ"];
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v246 -> v248;
+
+v246 [label="NFCORE_SAREK:SAREK:SPRING_DECOMPRESS_TO_R2_FQ"];
+v247 [shape=point];
+v246 -> v247;
+
+v248 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v248 -> v249;
+
+v249 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v249 -> v250 [label="two_fastq_gz_from_spring"];
+
+v250 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v250 -> v326 [label="two_fastq_gz_from_spring"];
+
+v251 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v251 -> v316 [label="versions"];
+
+v252 [shape=point,label="",fixedsize=true,width=0.1];
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v252 -> v254;
+
+v253 [shape=point,label="",fixedsize=true,width=0.1];
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v253 -> v254 [label="qname"];
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v254 -> v309;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v261 [shape=point];
+v254 -> v261;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v260 [shape=point];
+v254 -> v260;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v259 [shape=point];
+v254 -> v259;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v258 [shape=point];
+v254 -> v258;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v257 [shape=point];
+v254 -> v257;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v256 [shape=point];
+v254 -> v256;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v255 [shape=point];
+v254 -> v255;
+
+v254 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_MAP"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v254 -> v320;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v234 -> v264 [label="input"];
+
+v262 [shape=point,label="",fixedsize=true,width=0.1];
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v262 -> v264;
+
+v263 [shape=point,label="",fixedsize=true,width=0.1];
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v263 -> v264 [label="qname"];
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v264 -> v292;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v271 [shape=point];
+v264 -> v271;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v270 [shape=point];
+v264 -> v270;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v269 [shape=point];
+v264 -> v269;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v268 [shape=point];
+v264 -> v268;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v267 [shape=point];
+v264 -> v267;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v266 [shape=point];
+v264 -> v266;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v265 [shape=point];
+v264 -> v265;
+
+v264 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_UNMAP"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v264 -> v323;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v234 -> v274 [label="input"];
+
+v272 [shape=point,label="",fixedsize=true,width=0.1];
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v272 -> v274;
+
+v273 [shape=point,label="",fixedsize=true,width=0.1];
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v273 -> v274 [label="qname"];
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v274 -> v292;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v281 [shape=point];
+v274 -> v281;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v280 [shape=point];
+v274 -> v280;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v279 [shape=point];
+v274 -> v279;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v278 [shape=point];
+v274 -> v278;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v277 [shape=point];
+v274 -> v277;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v276 [shape=point];
+v274 -> v276;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v275 [shape=point];
+v274 -> v275;
+
+v274 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_UNMAP_MAP"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v274 -> v322;
+
+v234 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v234 -> v284 [label="input"];
+
+v282 [shape=point,label="",fixedsize=true,width=0.1];
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v282 -> v284;
+
+v283 [shape=point,label="",fixedsize=true,width=0.1];
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v283 -> v284 [label="qname"];
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v284 -> v293;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v291 [shape=point];
+v284 -> v291;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v290 [shape=point];
+v284 -> v290;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v289 [shape=point];
+v284 -> v289;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v288 [shape=point];
+v284 -> v288;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v287 [shape=point];
+v284 -> v287;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v286 [shape=point];
+v284 -> v286;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v285 [shape=point];
+v284 -> v285;
+
+v284 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_VIEW_MAP_UNMAP"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v284 -> v321;
+
+v292 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v292 -> v293;
+
+v293 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v293 -> v294;
+
+v294 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v294 -> v297 [label="all_unmapped_bam"];
+
+v295 [shape=point,label="",fixedsize=true,width=0.1];
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v295 -> v297;
+
+v296 [shape=point,label="",fixedsize=true,width=0.1];
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v296 -> v297;
+
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v297 -> v303;
+
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v300 [shape=point];
+v297 -> v300;
+
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v299 [shape=point];
+v297 -> v299;
+
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v298 [shape=point];
+v297 -> v298;
+
+v297 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:SAMTOOLS_MERGE_UNMAP"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v297 -> v319;
+
+v301 [shape=point,label="",fixedsize=true,width=0.1];
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v301 -> v303;
+
+v302 [shape=point,label="",fixedsize=true,width=0.1];
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v302 -> v303 [label="interleave"];
+
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v303 -> v313;
+
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v306 [shape=point];
+v303 -> v306;
+
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v305 [shape=point];
+v303 -> v305;
+
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v304 [shape=point];
+v303 -> v304;
+
+v303 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_UNMAP"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v303 -> v318;
+
+v307 [shape=point,label="",fixedsize=true,width=0.1];
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v307 -> v309;
+
+v308 [shape=point,label="",fixedsize=true,width=0.1];
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v308 -> v309 [label="interleave"];
+
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v309 -> v313;
+
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v312 [shape=point];
+v309 -> v312;
+
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v311 [shape=point];
+v309 -> v311;
+
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v310 [shape=point];
+v309 -> v310;
+
+v309 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:COLLATE_FASTQ_MAP"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v309 -> v317;
+
+v313 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v313 -> v314;
+
+v314 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v315 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:CAT_FASTQ"];
+v314 -> v315 [label="reads_to_concat"];
+
+v315 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:CAT_FASTQ"];
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 -> v324 [label="reads"];
+
+v315 [label="NFCORE_SAREK:SAREK:CONVERT_FASTQ_INPUT:CAT_FASTQ"];
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v315 -> v316;
+
+v316 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v316 -> v317 [label="versions"];
+
+v317 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v317 -> v318 [label="versions"];
+
+v318 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v318 -> v319 [label="versions"];
+
+v319 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v319 -> v320 [label="versions"];
+
+v320 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v320 -> v321 [label="versions"];
+
+v321 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v321 -> v322 [label="versions"];
+
+v322 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v322 -> v323 [label="versions"];
+
+v323 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v323 -> v401 [label="versions"];
+
+v324 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v324 -> v325;
+
+v325 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v325 -> v326;
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v327 [label="NFCORE_SAREK:SAREK:FASTQC"];
+v326 -> v327 [label="reads_for_fastp"];
+
+v327 [label="NFCORE_SAREK:SAREK:FASTQC"];
+v328 [shape=point];
+v327 -> v328;
+
+v327 [label="NFCORE_SAREK:SAREK:FASTQC"];
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v327 -> v329;
+
+v327 [label="NFCORE_SAREK:SAREK:FASTQC"];
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v327 -> v331;
+
+v329 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v329 -> v330;
+
+v330 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v330 -> v342 [label="reports"];
+
+v331 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v331 -> v332;
+
+v332 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v332 -> v347 [label="versions"];
+
+v326 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v326 -> v337 [label="reads_for_fastp"];
+
+v333 [shape=point,label="",fixedsize=true,width=0.1];
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v333 -> v337 [label="adapter_fasta"];
+
+v334 [shape=point,label="",fixedsize=true,width=0.1];
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v334 -> v337 [label="discard_trimmed_pass"];
+
+v335 [shape=point,label="",fixedsize=true,width=0.1];
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v335 -> v337 [label="save_trimmed_fail"];
+
+v336 [shape=point,label="",fixedsize=true,width=0.1];
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v336 -> v337 [label="save_merged"];
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v337 -> v345;
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v337 -> v341;
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v337 -> v343;
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v340 [shape=point];
+v337 -> v340;
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v339 [shape=point];
+v337 -> v339;
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v338 [shape=point];
+v337 -> v338;
+
+v337 [label="NFCORE_SAREK:SAREK:FASTP"];
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v337 -> v347;
+
+v341 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v341 -> v342;
+
+v342 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v342 -> v344 [label="reports"];
+
+v343 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v343 -> v344;
+
+v344 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v344 -> v444 [label="reports"];
+
+v345 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v345 -> v346;
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 -> v348 [label="reads_for_alignment"];
+
+v347 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v347 -> v401 [label="versions"];
+
+v348 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v348 -> v349;
+
+v349 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v349 -> v350;
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v350 -> v388 [label="reads_grouping_key"];
+
+v346 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="transpose"];
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v346 -> v351 [label="reads_for_alignment"];
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v351 -> v356 [label="reads"];
+
+v352 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v352 -> v384 [label="versions"];
+
+v353 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v353 -> v382 [label="reports"];
+
+v354 [shape=point,label="",fixedsize=true,width=0.1];
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v354 -> v356;
+
+v355 [shape=point,label="",fixedsize=true,width=0.1];
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v355 -> v356 [label="sort_bam"];
+
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 -> v376;
+
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v359 [shape=point];
+v356 -> v359;
+
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v358 [shape=point];
+v356 -> v358;
+
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v357 [shape=point];
+v356 -> v357;
+
+v356 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM1_MEM"];
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v356 -> v384;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v351 -> v362 [label="reads"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v153 -> v362 [label="index"];
+
+v360 [shape=point,label="",fixedsize=true,width=0.1];
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v360 -> v362;
+
+v361 [shape=point,label="",fixedsize=true,width=0.1];
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v361 -> v362 [label="sort_bam"];
+
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v366 [shape=point];
+v362 -> v366;
+
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 -> v377;
+
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v365 [shape=point];
+v362 -> v365;
+
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v364 [shape=point];
+v362 -> v364;
+
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v363 [shape=point];
+v362 -> v363;
+
+v362 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:BWAMEM2_MEM"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v362 -> v385;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v351 -> v369 [label="reads"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v153 -> v369 [label="index"];
+
+v367 [shape=point,label="",fixedsize=true,width=0.1];
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v367 -> v369;
+
+v368 [shape=point,label="",fixedsize=true,width=0.1];
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v368 -> v369 [label="sort_bam"];
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v373 [shape=point];
+v369 -> v373;
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 -> v378;
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v372 [shape=point];
+v369 -> v372;
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v371 [shape=point];
+v369 -> v371;
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v370 [shape=point];
+v369 -> v370;
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 -> v382;
+
+v369 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:DRAGMAP_ALIGN"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v369 -> v386;
+
+v351 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v351 -> v374 [label="reads"];
+
+v153 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v153 -> v374 [label="index"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v2 -> v374 [label="ch_fasta"];
+
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v374 -> v379;
+
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v374 -> v387;
+
+v375 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v375 -> v376 [label="bam"];
+
+v376 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v376 -> v377 [label="bam"];
+
+v377 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v377 -> v378 [label="bam"];
+
+v378 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v378 -> v380 [label="bam"];
+
+v379 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v379 -> v380;
+
+v380 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v380 -> v388 [label="bam"];
+
+v374 [label="NFCORE_SAREK:SAREK:FASTQ_ALIGN_BWAMEM_MEM2_DRAGMAP_SENTIEON:SENTIEON_BWAMEM"];
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v374 -> v381;
+
+v381 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v381 -> v394 [label="bai"];
+
+v382 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v383 [shape=point];
+v382 -> v383 [label="reports"];
+
+v384 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v384 -> v385 [label="versions"];
+
+v385 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v385 -> v386 [label="versions"];
+
+v386 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v386 -> v387 [label="versions"];
+
+v387 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v387 -> v402 [label="versions"];
+
+v388 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v388 -> v389;
+
+v389 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v389 -> v390;
+
+v390 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v390 -> v391;
+
+v391 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v391 -> v392;
+
+v392 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v392 -> v393;
+
+v393 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v393 -> v412 [label="bam"];
+
+v350 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v350 -> v394 [label="reads_grouping_key"];
+
+v394 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v394 -> v395;
+
+v395 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="filter"];
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v395 -> v396;
+
+v396 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v396 -> v397;
+
+v397 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v397 -> v398;
+
+v398 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v398 -> v399;
+
+v399 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v400 [shape=point];
+v399 -> v400 [label="bai_mapped"];
+
+v401 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v401 -> v402 [label="versions"];
+
+v402 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v402 -> v445 [label="versions"];
+
+v403 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v404 [shape=point];
+v403 -> v404 [label="cram_markduplicates_no_spark"];
+
+v405 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v405 -> v447 [label="cram_sentieon_dedup"];
+
+v406 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v406 -> v447 [label="cram_markduplicates_spark"];
+
+v407 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v407 -> v458 [label="cram_skip_markduplicates"];
+
+v408 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v408 -> v441 [label="versions"];
+
+v409 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v409 -> v439 [label="reports"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v410 [label="ch_fasta"];
+
+v410 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v410 -> v412;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 -> v411 [label="fasta_fai"];
+
+v411 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v411 -> v412;
+
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v412 -> v415;
+
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v414 [shape=point];
+v412 -> v414;
+
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v412 -> v415;
+
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v413 [shape=point];
+v412 -> v413;
+
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 -> v439;
+
+v412 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:GATK4_MARKDUPLICATES"];
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v412 -> v441;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v418 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:SAMTOOLS_STATS"];
+v415 -> v418 [label="cram_markduplicates_no_spark"];
+
+v416 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v416 -> v436 [label="versions"];
+
+v417 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v417 -> v433 [label="reports"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v418 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:SAMTOOLS_STATS"];
+v2 -> v418 [label="ch_fasta"];
+
+v418 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:SAMTOOLS_STATS"];
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v418 -> v433;
+
+v418 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:SAMTOOLS_STATS"];
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v418 -> v437;
+
+v419 [shape=point,label="",fixedsize=true,width=0.1];
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v419 -> v420 [label="intervals"];
+
+v420 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v420 -> v421;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v415 -> v421 [label="cram_markduplicates_no_spark"];
+
+v421 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v421 -> v422;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v2 -> v422 [label="ch_fasta"];
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v422 -> v434;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v432 [shape=point];
+v422 -> v432;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v422 -> v435;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v431 [shape=point];
+v422 -> v431;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v430 [shape=point];
+v422 -> v430;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v429 [shape=point];
+v422 -> v429;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v428 [shape=point];
+v422 -> v428;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v427 [shape=point];
+v422 -> v427;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v426 [shape=point];
+v422 -> v426;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v425 [shape=point];
+v422 -> v425;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v424 [shape=point];
+v422 -> v424;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v423 [shape=point];
+v422 -> v423;
+
+v422 [label="NFCORE_SAREK:SAREK:BAM_MARKDUPLICATES:CRAM_QC_MOSDEPTH_SAMTOOLS:MOSDEPTH"];
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v422 -> v436;
+
+v433 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v433 -> v434 [label="reports"];
+
+v434 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v434 -> v435 [label="reports"];
+
+v435 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v435 -> v440 [label="reports"];
+
+v436 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v436 -> v438 [label="versions"];
+
+v437 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v437 -> v438;
+
+v438 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v438 -> v442 [label="versions"];
+
+v439 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v439 -> v440 [label="reports"];
+
+v440 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v440 -> v443 [label="reports"];
+
+v441 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v441 -> v442 [label="versions"];
+
+v442 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v442 -> v445 [label="versions"];
+
+v443 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v443 -> v444;
+
+v444 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v444 -> v483 [label="reports"];
+
+v445 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v445 -> v454 [label="versions"];
+
+v446 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v446 -> v447;
+
+v415 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v415 -> v447 [label="cram_markduplicates_no_spark"];
+
+v447 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v447 -> v448;
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v448 -> v449 [label="cram_markduplicates"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v2 -> v449 [label="ch_fasta"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v150 -> v449 [label="fasta_fai"];
+
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v453 [shape=point];
+v449 -> v453;
+
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v452 [shape=point];
+v449 -> v452;
+
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v451 [shape=point];
+v449 -> v451;
+
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v450 [shape=point];
+v449 -> v450;
+
+v449 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM"];
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v449 -> v454;
+
+v454 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v454 -> v479 [label="versions"];
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v448 -> v455 [label="cram_markduplicates"];
+
+v455 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v456 [shape=point];
+v455 -> v456;
+
+v457 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v457 -> v458;
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v448 -> v458 [label="cram_markduplicates"];
+
+v458 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v458 -> v459;
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v459 -> v464 [label="cram"];
+
+v460 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v461 [shape=point];
+v460 -> v461 [label="ch_table_bqsr_no_spark"];
+
+v462 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v462 -> v481 [label="ch_table_bqsr_spark"];
+
+v463 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v463 -> v477 [label="versions"];
+
+v464 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v464 -> v465;
+
+v465 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v465 -> v469 [label="cram_intervals"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v466 [label="ch_fasta"];
+
+v466 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v466 -> v469;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 -> v467 [label="fasta_fai"];
+
+v467 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v467 -> v469;
+
+v468 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v468 -> v469;
+
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v469 -> v470;
+
+v469 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_BASERECALIBRATOR"];
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v469 -> v477;
+
+v470 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v470 -> v471;
+
+v471 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v471 -> v472;
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v472 -> v474;
+
+v472 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v473 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_GATHERBQSRREPORTS"];
+v472 -> v473;
+
+v473 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_GATHERBQSRREPORTS"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 -> v475;
+
+v473 [label="NFCORE_SAREK:SAREK:BAM_BASERECALIBRATOR:GATK4_GATHERBQSRREPORTS"];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v473 -> v478;
+
+v474 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v474 -> v475;
+
+v475 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v475 -> v476;
+
+v476 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v476 -> v481 [label="ch_table_bqsr_no_spark"];
+
+v477 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v477 -> v478 [label="versions"];
+
+v478 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v478 -> v479 [label="versions"];
+
+v479 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v479 -> v523 [label="versions"];
+
+v480 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v480 -> v481;
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v481 -> v482 [label="ch_table_bqsr"];
+
+v482 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v482 -> v483;
+
+v483 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v608 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v483 -> v608 [label="reports"];
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v484 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v481 -> v484 [label="ch_table_bqsr"];
+
+v459 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v484 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v459 -> v484 [label="cram"];
+
+v484 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v484 -> v492 [label="cram"];
+
+v481 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v481 -> v485 [label="ch_table_bqsr"];
+
+v448 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v448 -> v485 [label="cram_markduplicates"];
+
+v485 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v485 -> v486 [label="cram_table_bqsr"];
+
+v486 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v487 [shape=point];
+v486 -> v487;
+
+v488 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v489 [shape=point];
+v488 -> v489 [label="cram_variant_calling_no_spark"];
+
+v490 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v490 -> v525 [label="cram_variant_calling_spark"];
+
+v491 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v491 -> v521 [label="versions"];
+
+v223 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v223 -> v492 [label="intervals"];
+
+v492 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v492 -> v493;
+
+v493 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v493 -> v497 [label="cram_intervals"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v494 [label="ch_fasta"];
+
+v494 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v494 -> v497;
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 -> v495 [label="fasta_fai"];
+
+v495 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v495 -> v497;
+
+v147 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v147 -> v496 [label="dict"];
+
+v496 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v496 -> v497;
+
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v498 [shape=point];
+v497 -> v498;
+
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v497 -> v499;
+
+v497 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:GATK4_APPLYBQSR"];
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v497 -> v521;
+
+v499 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v499 -> v500;
+
+v500 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="groupTuple"];
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v500 -> v504 [label="cram"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v2 -> v501 [label="ch_fasta"];
+
+v501 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v501 -> v505 [label="fasta"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v150 -> v502 [label="fasta_fai"];
+
+v502 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v502 -> v506 [label="fasta_fai"];
+
+v503 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v503 -> v517 [label="versions"];
+
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v504 -> v507;
+
+v504 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="branch"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v504 -> v511;
+
+v505 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v505 -> v507;
+
+v506 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v506 -> v507;
+
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v510 [shape=point];
+v507 -> v510;
+
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v507 -> v511;
+
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v509 [shape=point];
+v507 -> v509;
+
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v508 [shape=point];
+v507 -> v508;
+
+v507 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:MERGE_CRAM"];
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v507 -> v518;
+
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v512 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:INDEX_CRAM"];
+v511 -> v512 [label="cram_all"];
+
+v512 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:INDEX_CRAM"];
+v514 [shape=point];
+v512 -> v514;
+
+v512 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:INDEX_CRAM"];
+v513 [shape=point];
+v512 -> v513;
+
+v512 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:INDEX_CRAM"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v512 -> v515;
+
+v512 [label="NFCORE_SAREK:SAREK:BAM_APPLYBQSR:CRAM_MERGE_INDEX_SAMTOOLS:INDEX_CRAM"];
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v512 -> v516;
+
+v511 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v511 -> v515 [label="cram_all"];
+
+v515 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="join"];
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v515 -> v520 [label="cram_crai"];
+
+v516 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v516 -> v517;
+
+v517 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v519 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v517 -> v519 [label="versions"];
+
+v518 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v519 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v518 -> v519;
+
+v519 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v519 -> v522 [label="versions"];
+
+v520 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v520 -> v525 [label="cram_variant_calling_no_spark"];
+
+v521 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v521 -> v522 [label="versions"];
+
+v522 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v522 -> v523 [label="versions"];
+
+v523 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v523 -> v531 [label="versions"];
+
+v524 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v524 -> v525;
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v525 -> v526 [label="cram"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v2 -> v526 [label="ch_fasta"];
+
+v150 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v150 -> v526 [label="fasta_fai"];
+
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v530 [shape=point];
+v526 -> v530;
+
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v529 [shape=point];
+v526 -> v529;
+
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v528 [shape=point];
+v526 -> v528;
+
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v527 [shape=point];
+v526 -> v527;
+
+v526 [label="NFCORE_SAREK:SAREK:CRAM_TO_BAM_RECAL"];
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v526 -> v531;
+
+v531 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v595 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v531 -> v595 [label="versions"];
+
+v532 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v533 [shape=point];
+v532 -> v533 [label="csv_recalibration"];
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v525 -> v534 [label="cram"];
+
+v534 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v535 [shape=point];
+v534 -> v535;
+
+v536 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v563 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v536 -> v563 [label="versions"];
+
+v537 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v538 [shape=point];
+v537 -> v538 [label="reports"];
+
+v539 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v558 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v539 -> v558 [label="versions"];
+
+v540 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v555 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v540 -> v555 [label="reports"];
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v541 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:SAMTOOLS_STATS"];
+v525 -> v541 [label="cram"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v541 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:SAMTOOLS_STATS"];
+v2 -> v541 [label="ch_fasta"];
+
+v541 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:SAMTOOLS_STATS"];
+v555 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v541 -> v555;
+
+v541 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:SAMTOOLS_STATS"];
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v541 -> v559;
+
+v419 [shape=point,label="",fixedsize=true,width=0.1];
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v419 -> v542 [label="intervals"];
+
+v542 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v542 -> v543;
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v525 -> v543 [label="cram"];
+
+v543 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v543 -> v544;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v2 -> v544 [label="ch_fasta"];
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v556 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v544 -> v556;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v554 [shape=point];
+v544 -> v554;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v544 -> v557;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v553 [shape=point];
+v544 -> v553;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v552 [shape=point];
+v544 -> v552;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v551 [shape=point];
+v544 -> v551;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v550 [shape=point];
+v544 -> v550;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v549 [shape=point];
+v544 -> v549;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v548 [shape=point];
+v544 -> v548;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v547 [shape=point];
+v544 -> v547;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v546 [shape=point];
+v544 -> v546;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v545 [shape=point];
+v544 -> v545;
+
+v544 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:CRAM_QC_RECAL:MOSDEPTH"];
+v558 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v544 -> v558;
+
+v555 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v556 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v555 -> v556 [label="reports"];
+
+v556 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v556 -> v557 [label="reports"];
+
+v557 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v561 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v557 -> v561 [label="reports"];
+
+v558 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v560 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v558 -> v560 [label="versions"];
+
+v559 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v560 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v559 -> v560;
+
+v560 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v563 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v560 -> v563 [label="versions"];
+
+v561 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v562 [shape=point];
+v561 -> v562 [label="reports"];
+
+v563 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v591 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v563 -> v591 [label="versions"];
+
+v525 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v525 -> v564 [label="cram"];
+
+v564 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v564 -> v569 [label="ch_input"];
+
+v565 [shape=point,label="",fixedsize=true,width=0.1];
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v565 -> v566 [label="ngscheckmate_bed"];
+
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v566 -> v568 [label="ch_snp_bed"];
+
+v567 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v577 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v567 -> v577 [label="ch_versions"];
+
+v568 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v568 -> v569;
+
+v569 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v569 -> v570;
+
+v570 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v570 -> v573 [label="ch_input_bed"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v571 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v2 -> v571 [label="ch_fasta"];
+
+v571 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v571 -> v573;
+
+v572 [shape=point,label="",fixedsize=true,width=0.1];
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v572 -> v573 [label="save_mpileup"];
+
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v578 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v573 -> v578 [label="vcf"];
+
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v576 [shape=point];
+v573 -> v576;
+
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v575 [shape=point];
+v573 -> v575;
+
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v574 [shape=point];
+v573 -> v574;
+
+v573 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:BCFTOOLS_MPILEUP"];
+v577 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v573 -> v577;
+
+v577 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v589 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v577 -> v589 [label="ch_versions"];
+
+v578 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v579 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v578 -> v579;
+
+v579 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v580 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v579 -> v580;
+
+v580 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v582 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v580 -> v582 [label="ch_collected_vcfs"];
+
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v581 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v566 -> v581 [label="ch_snp_bed"];
+
+v581 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v582 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v581 -> v582;
+
+v582 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="combine"];
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v582 -> v583 [label="ch_vcfs"];
+
+v566 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v566 -> v583 [label="ch_snp_bed"];
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v2 -> v583 [label="ch_fasta"];
+
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v588 [shape=point];
+v583 -> v588 [label="corr_matrix"];
+
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v587 [shape=point];
+v583 -> v587 [label="matched"];
+
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v586 [shape=point];
+v583 -> v586 [label="all"];
+
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v585 [shape=point];
+v583 -> v585 [label="pdf"];
+
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v584 [shape=point];
+v583 -> v584;
+
+v583 [label="NFCORE_SAREK:SAREK:CRAM_SAMPLEQC:BAM_NGSCHECKMATE:NGSCHECKMATE_NCM"];
+v589 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v583 -> v589;
+
+v589 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v590 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v589 -> v590 [label="versions"];
+
+v590 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="first"];
+v591 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v590 -> v591;
+
+v591 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v592 [shape=point];
+v591 -> v592 [label="versions"];
+
+v593 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v594 [shape=point];
+v593 -> v594 [label="version_yaml"];
+
+v595 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v596 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v595 -> v596;
+
+v596 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v597 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v596 -> v597;
+
+v597 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="unique"];
+v599 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v597 -> v599;
+
+v598 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.of"];
+v599 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v598 -> v599;
+
+v599 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v600 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v599 -> v600;
+
+v600 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v607 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v600 -> v607 [label="version_yaml"];
+
+v601 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v613 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v601 -> v613 [label="ch_multiqc_config"];
+
+v602 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v614 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v602 -> v614 [label="ch_multiqc_custom_config"];
+
+v603 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.empty"];
+v615 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v603 -> v615 [label="ch_multiqc_logo"];
+
+v604 [shape=point,label="",fixedsize=true,width=0.1];
+v605 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v604 -> v605 [label="ch_workflow_summary"];
+
+v605 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v606 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v605 -> v606;
+
+v606 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v607 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v606 -> v607 [label="ch_multiqc_files"];
+
+v607 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v608 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v607 -> v608 [label="ch_multiqc_files"];
+
+v608 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v611 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v608 -> v611 [label="ch_multiqc_files"];
+
+v609 [shape=point,label="",fixedsize=true,width=0.1];
+v610 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v609 -> v610 [label="ch_methods_description"];
+
+v610 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collectFile"];
+v611 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v610 -> v611;
+
+v611 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v612 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v611 -> v612 [label="ch_multiqc_files"];
+
+v612 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v612 -> v618;
+
+v613 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v613 -> v618;
+
+v614 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v614 -> v618;
+
+v615 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v615 -> v618;
+
+v616 [shape=point,label="",fixedsize=true,width=0.1];
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v616 -> v618 [label="replace_names"];
+
+v617 [shape=point,label="",fixedsize=true,width=0.1];
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v617 -> v618 [label="sample_names"];
+
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v622 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v618 -> v622;
+
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v621 [shape=point];
+v618 -> v621;
+
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v620 [shape=point];
+v618 -> v620;
+
+v618 [label="NFCORE_SAREK:SAREK:MULTIQC"];
+v619 [shape=point];
+v618 -> v619;
+
+v622 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v623 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v622 -> v623 [label="multiqc_report"];
+
+v623 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="toList"];
+v624 [shape=point];
+v623 -> v624;
+
+}
