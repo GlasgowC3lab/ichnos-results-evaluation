@@ -1,5 +1,0 @@
-currently about to convert-stamps for the energy logs for these workflows
-then, you need to split and get the active periods, use the visualiser, and copy to the new folder
-persist the energy stored
-then estimate energy using rapl, will use node data from 40,42,44,45 since i cant access the nodes utilised
-should be sufficient for extra workflow traces and accuracy of ichnos
