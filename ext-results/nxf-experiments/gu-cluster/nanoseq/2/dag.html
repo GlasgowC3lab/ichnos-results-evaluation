@@ -1,0 +1,263 @@
+<!--
+  ~ Copyright 2013-2024, Seqera Labs
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<pre class="mermaid" style="text-align: center;">
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#B6ECE2',
+      'primaryTextColor': '#160F26',
+      'primaryBorderColor': '#065647',
+      'lineColor': '#545555',
+      'clusterBkg': '#BABCBD22',
+      'clusterBorder': '#DDDEDE',
+      'fontFamily': 'arial'
+    }
+  }
+}%%
+flowchart TB
+    subgraph " "
+    v2["samplesheet"]
+    v3["input_path"]
+    v178["ch_workflow_summary"]
+    v180["ch_multiqc_config"]
+    end
+    subgraph "NFCORE_NANOSEQ [NFCORE_NANOSEQ]"
+    subgraph "NFCORE_NANOSEQ:NANOSEQ [NANOSEQ]"
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:INPUT_CHECK [INPUT_CHECK]"
+    v4(["SAMPLESHEET_CHECK"])
+    v6(( ))
+    end
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC [QCFASTQ_NANOPLOT_FASTQC]"
+    v23(["NANOPLOT"])
+    v35(["FASTQC"])
+    v12(( ))
+    v37(( ))
+    end
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME [PREPARE_GENOME]"
+    v49(["GET_CHROM_SIZES"])
+    v53(["GTF2BED"])
+    v64(["SAMTOOLS_FAIDX"])
+    v46(( ))
+    v50(( ))
+    v54(( ))
+    v61(( ))
+    end
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2 [ALIGN_MINIMAP2]"
+    v74(["MINIMAP2_INDEX"])
+    v79(["MINIMAP2_ALIGN"])
+    v75(( ))
+    end
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS [BAM_SORT_INDEX_SAMTOOLS]"
+    v84(["SAMTOOLS_VIEW_BAM"])
+    v86(["SAMTOOLS_SORT"])
+    v89(["SAMTOOLS_INDEX"])
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS [BAM_STATS_SAMTOOLS]"
+    v98(["SAMTOOLS_STATS"])
+    v99(["SAMTOOLS_FLAGSTAT"])
+    v101(["SAMTOOLS_IDXSTATS"])
+    v97(( ))
+    end
+    v93(( ))
+    v96(( ))
+    v103(( ))
+    end
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG [BEDTOOLS_UCSC_BIGWIG]"
+    v111(["BEDTOOLS_GENOMECOV"])
+    v112(["UCSC_BEDGRAPHTOBIGWIG"])
+    end
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED [BEDTOOLS_UCSC_BIGBED]"
+    v120(["BEDTOOLS_BAMBED"])
+    v121(["UCSC_BED12TOBIGBED"])
+    end
+    v150(["BAMBU"])
+    subgraph "NFCORE_NANOSEQ:NANOSEQ:DIFFERENTIAL_DESEQ2_DEXSEQ [DIFFERENTIAL_DESEQ2_DEXSEQ]"
+    v155(["DESEQ2"])
+    v157(["DEXSEQ"])
+    end
+    v167(["CUSTOM_DUMPSOFTWAREVERSIONS"])
+    v181(["MULTIQC"])
+    v9(( ))
+    v40(( ))
+    v43(( ))
+    v109(( ))
+    v132(( ))
+    v133(( ))
+    v137(( ))
+    v141(( ))
+    v147(( ))
+    v170(( ))
+    v175(( ))
+    v176(( ))
+    v177(( ))
+    v179(( ))
+    end
+    end
+    subgraph " "
+    v5[" "]
+    v24["nanoplot_version"]
+    v25["nanoplot_log"]
+    v26["nanoplot_txt"]
+    v27[" "]
+    v28["nanoplot_html"]
+    v36[" "]
+    v65[" "]
+    v66[" "]
+    v67["ch_fai"]
+    v80[" "]
+    v85[" "]
+    v87[" "]
+    v88[" "]
+    v90[" "]
+    v91[" "]
+    v92[" "]
+    v100[" "]
+    v102[" "]
+    v113["ch_bigwig"]
+    v122["ch_bigbed"]
+    v134["ch_nanopolish_sortbam"]
+    v140["fastas"]
+    v144["gtfs"]
+    v151[" "]
+    v156["ch_deseq2_txt"]
+    v158["ch_dexseq_txt"]
+    v168[" "]
+    v169[" "]
+    v182[" "]
+    v183[" "]
+    v184[" "]
+    v185[" "]
+    end
+    v2 --> v4
+    v3 --> v4
+    v4 --> v5
+    v4 --> v6
+    v12 --> v23
+    v23 --> v28
+    v23 --> v27
+    v23 --> v26
+    v23 --> v25
+    v23 --> v24
+    v12 --> v35
+    v35 --> v36
+    v35 --> v37
+    v46 --> v49
+    v49 --> v40
+    v49 --> v54
+    v50 --> v53
+    v53 --> v40
+    v53 --> v54
+    v61 --> v64
+    v64 --> v67
+    v64 --> v66
+    v64 --> v65
+    v54 --> v74
+    v74 --> v40
+    v74 --> v75
+    v75 --> v79
+    v79 --> v84
+    v79 --> v80
+    v79 --> v93
+    v84 --> v86
+    v84 --> v85
+    v86 --> v89
+    v86 --> v88
+    v86 --> v87
+    v86 --> v93
+    v86 --> v96
+    v89 --> v92
+    v89 --> v91
+    v89 --> v90
+    v89 --> v93
+    v89 --> v96
+    v96 --> v98
+    v97 --> v98
+    v98 --> v40
+    v98 --> v103
+    v96 --> v99
+    v99 --> v100
+    v99 --> v103
+    v96 --> v101
+    v101 --> v102
+    v101 --> v103
+    v93 --> v111
+    v111 --> v112
+    v111 --> v40
+    v112 --> v113
+    v112 --> v40
+    v93 --> v120
+    v120 --> v121
+    v120 --> v40
+    v121 --> v122
+    v121 --> v40
+    v133 --> v134
+    v137 --> v140
+    v141 --> v144
+    v132 --> v150
+    v147 --> v150
+    v150 --> v155
+    v150 --> v157
+    v150 --> v151
+    v150 --> v40
+    v155 --> v156
+    v155 --> v40
+    v157 --> v158
+    v157 --> v40
+    v40 --> v167
+    v167 --> v169
+    v167 --> v168
+    v167 --> v177
+    v178 --> v179
+    v180 --> v181
+    v43 --> v181
+    v109 --> v181
+    v170 --> v181
+    v175 --> v181
+    v176 --> v181
+    v177 --> v181
+    v179 --> v181
+    v181 --> v185
+    v181 --> v184
+    v181 --> v183
+    v181 --> v182
+    v6 --> v9
+    v6 --> v137
+    v6 --> v141
+    v6 --> v147
+    v9 --> v12
+    v9 --> v46
+    v9 --> v50
+    v9 --> v54
+    v9 --> v61
+    v9 --> v75
+    v37 --> v43
+    v61 --> v97
+    v93 --> v132
+    v93 --> v133
+    v103 --> v109
+
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, maxTextSize: Number.MAX_SAFE_INTEGER, maxEdges: Number.MAX_SAFE_INTEGER });
+</script>
+</body>
+</html>

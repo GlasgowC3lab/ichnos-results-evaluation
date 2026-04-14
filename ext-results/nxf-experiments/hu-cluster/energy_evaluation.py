@@ -62,6 +62,19 @@ def get_idle_period_data(run, node):
     return idle_periods
 
 
+def get_active_period_data(run, node):
+    energy_dir = f'{workflow}/{run+1}/energy/'
+    with open(energy_dir + f'active_{node}.csv') as file:
+        stripped_lines = [line.rstrip().split(',') for line in file.readlines()]
+        header = stripped_lines[0]
+        data = stripped_lines[1:]
+
+    active_periods = pd.DataFrame(data, columns=header).drop(columns=['start_time', 'end_time'])
+    active_periods['start_ms'] = active_periods['start_ms'].astype(float)
+    active_periods['end_ms'] = active_periods['end_ms'].astype(float)
+    return active_periods
+
+
 def get_rapl_for_period(start_time, end_time, package_log, dram_log):
     calculated_consumption = False 
     position = 0
@@ -115,7 +128,7 @@ def get_rapl_for_period(start_time, end_time, package_log, dram_log):
 
 
 with open(f'{workflow}-runs.csv', 'w') as outfile:
-    outfile.write('run,pkg,dram,total\n')
+    outfile.write('run,pkg,dram,total,idle_pkg,idle_dram,idle_total,active_pkg,active_dram,active_total\n')
 
     for run in range(0, runs): 
         task_data = []
@@ -149,22 +162,26 @@ with open(f'{workflow}-runs.csv', 'w') as outfile:
             'hu-worker-c40': {
                 PKG: c40_pkg,
                 DRAM: c40_dram,
-                'idle_intervals': get_idle_period_data(run, 'c40')
+                'idle_intervals': get_idle_period_data(run, 'c40'),
+                'active_intervals': get_active_period_data(run, 'c40')
             },
             'hu-worker-c42': {
                 PKG: c42_pkg,
                 DRAM: c42_dram,
-                'idle_intervals': get_idle_period_data(run, 'c42')
+                'idle_intervals': get_idle_period_data(run, 'c42'),
+                'active_intervals': get_active_period_data(run, 'c42')
             },
             'hu-worker-c44': {
                 PKG: c44_pkg,
                 DRAM: c44_dram,
-                'idle_intervals': get_idle_period_data(run, 'c44')
+                'idle_intervals': get_idle_period_data(run, 'c44'),
+                'active_intervals': get_active_period_data(run, 'c44')
             },
             'hu-worker-c45': {
                 PKG: c45_pkg,
                 DRAM: c45_dram,
-                'idle_intervals': get_idle_period_data(run, 'c45')
+                'idle_intervals': get_idle_period_data(run, 'c45'),
+                'active_intervals': get_active_period_data(run, 'c45')
             },
         }
 
@@ -203,7 +220,6 @@ with open(f'{workflow}-runs.csv', 'w') as outfile:
         total_kwh = convert_J_to_kWh(total_energy)
 
         print(workflow, 'run', run + 1)
-        # print(total_pkg_energy_per_node, 'J', total_dram_energy_per_node, 'J', total_energy, 'J')
         print(total_pkg_kwh, 'kWh', total_dram_kwh, 'kWh', total_kwh, 'kWh')
 
         # idle energy
@@ -222,8 +238,31 @@ with open(f'{workflow}-runs.csv', 'w') as outfile:
         total_idle_pkg = convert_J_to_kWh(sum(package_idle_per_node))
         total_idle_dram = convert_J_to_kWh(sum(dram_idle_per_node))
 
-        # Total - Idle Energy
-        print('total - idle')
-        print(total_pkg_kwh - total_idle_pkg, 'kWh', total_dram_kwh - total_idle_dram, 'kWh', total_kwh - total_idle_pkg - total_idle_dram, 'kWh')
+        # active energy
+        package_active_per_node = []
+        dram_active_per_node = []
+        for hostname in energy_by_host.keys():
+            pkg = energy_by_host[hostname][PKG].values.tolist()
+            dram = energy_by_host[hostname][DRAM].values.tolist()
+            active_intervals = energy_by_host[hostname]['active_intervals']
 
-        outfile.write(f'{run + 1},{total_pkg_kwh - total_idle_pkg},{total_dram_kwh - total_idle_dram},{total_kwh - total_idle_pkg - total_idle_dram}\n')
+            for _, row in active_intervals.iterrows():
+                (task_energy, task_dram) = get_rapl_for_period(row['start_ms'], row['end_ms'], pkg, dram)
+                package_active_per_node.append(task_energy)
+                dram_active_per_node.append(task_dram)
+
+        total_active_pkg = convert_J_to_kWh(sum(package_active_per_node))
+        total_active_dram = convert_J_to_kWh(sum(dram_active_per_node))
+
+        # if total_dram_kwh < 0:
+        #     total_dram_kwh *= -1  # make positive
+        #     total_dram_kwh = abs(total_dram_kwh - total_idle_dram)
+        # else:
+        #     total_dram_kwh = total_dram_kwh - total_idle_dram
+
+        # total_kwh = total_pkg_kwh - total_idle_pkg
+
+        # Report on Energy
+        outfile.write(f'{run + 1},{total_pkg_kwh},{total_dram_kwh},{total_kwh},\
+{total_idle_pkg},{total_idle_dram},{total_idle_pkg + total_idle_dram},\
+{total_active_pkg},{total_active_dram},{total_active_pkg + total_active_dram}\n')

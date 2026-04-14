@@ -1,0 +1,1 @@
+2025-10-23 10:42:26	3h 56m 32s	tiny_cuvier	OK	f421ddc35d81a0561685927c03e03995	23c06ebd-e861-4096-a657-c9e895e6ce9f	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config
