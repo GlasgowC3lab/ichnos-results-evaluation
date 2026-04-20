@@ -73,7 +73,7 @@ def get_rapl_for_period(start_time, end_time, package_log, dram_log):
             if package_log[position][1] < package_log[position - 1][1]:
                 overflows_1 += 1
             if package_log[position][2] < package_log[position - 1][2]:
-                overflows_2 += 2
+                overflows_2 += 1
             if end_time <= package_log[position][0]: 
                 energy_consumed_1 = (package_log[position][1] + (overflows_1 * rapl_max_value_overflow) - start_energy_1) * energy_unit_joules
                 energy_consumed_2 = (package_log[position][2] + (overflows_2 * rapl_max_value_overflow) - start_energy_2) * energy_unit_joules
