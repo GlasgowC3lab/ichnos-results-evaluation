@@ -272,11 +272,11 @@ def plot_task_timeline(tasks):
         if width <= 0: continue
 
         ax.barh(task["_y"], width, left=start, alpha=0.7, edgecolor='black')
-        mem_val = task["memory"] / 1073741824 if task["memory"] is not None else 0
+        core_val = task["cpu_count"]
         ax.text(
             start + (width / 2), 
             task["_y"], 
-            f"{mem_val:.0f}", 
+            core_val, 
             va='center', 
             ha='center', 
             color='white', 
