@@ -1,6 +1,8 @@
 # Ignore
 *.zip
 *marg*
+ext-results/nf-co2footprint/data/*
+*.nextflow
 
 # Generic
 __pycache__/
