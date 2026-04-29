@@ -1,7 +1,7 @@
 # Ignore
 *.zip
 *marg*
-ext-results/nf-co2footprint/data/*
+*ext-results/nf-co2footprint/ci/*
 *.nextflow
 
 # Generic
