@@ -5,6 +5,7 @@ from pathlib import Path
 def main(args):
     energy_file = Path(args[1])
     run_file = Path(args[2])
+    backup_energy_file = Path(args[5])
 
     # read runs
     runs = []
@@ -22,29 +23,29 @@ def main(args):
                 continue
 
     with open(energy_file) as f:
-        lines = [line.strip() for line in f if line.strip()]
+        val_lines = [line.strip() for line in f if line.strip()]
+
+    ts_lines = []
+    odd = True
+    with open(backup_energy_file) as f:
+        for line in f.readlines()[1:]:
+            if line.strip():
+                if odd:
+                    ts_lines.append(line.strip())
+                    odd = False
+                else:
+                    odd = True
 
     readings = []
-    # for i in range(0, len(lines), 3):  # for gpg nodes
-    for i in range(0, len(lines), 2):
-        # if i + 2 < len(lines):  # for gpg nodes
-        if i + 1 < len(lines):
-            try:
-                energy_1 = lines[i]
-                # energy_2 = lines[i+1]  # for gpg nodes
-                # ts = int(lines[i + 2])  # for gpg nodes
-                ts = int(lines[i + 1].split(' ')[0])
-                # readings.append((ts, energy_1, energy_2))  # for gpg nodes
-                readings.append((ts, energy_1))
-            except ValueError:
-                continue
+    for i in range(0, len(val_lines)):
+        tss = int(ts_lines[i])
+        val = val_lines[i]
+        readings.append((tss, val))
 
     # assign readings
-    # for ts, energy_1, energy_2 in readings:  #for gpg nodes
     for ts, energy_1 in readings:
         for run in runs:
             if run["start"] < ts < run["end"]:
-                # run["data"].append((ts, energy_1, energy_2))
                 run["data"].append((ts, energy_1))
                 break  
 
@@ -63,8 +64,4 @@ Usage:
     python split_energy_by_run.py energy_file.txt run-stamps.csv
 """
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: python split_energy_by_run.py <energy_file.txt> <run-stamps.csv> <node> <pkg|dram>")
-        sys.exit(1)
-
     main(sys.argv)

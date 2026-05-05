@@ -40,7 +40,7 @@ def get_energy_data(pkg_file, dram_file):
 
     dram_df = pd.DataFrame(dram_data, columns=header)
     dram_df['timestamp'] = dram_df['timestamp'].astype(int)
-    dram_df['energy'] = pkg_df['energy'].astype(float)
+    dram_df['energy'] = dram_df['energy'].astype(float)
 
     return pkg_df, dram_df
 
