@@ -8,12 +8,11 @@ Ichnos Output:
 - Static Energy Consumption (exc. PUE): 0.8948539116161617kWh
 - Energy Consumption (exc. PUE): 0.9921359148166746kWh
 - Energy Consumption (inc. PUE): 0.9921359148166746kWh
-- Memory Energy Consumption (exc. PUE): 0.2066298868923612kWh
-- Memory Energy Consumption (inc. PUE): 0.2066298868923612kWh
-- Operational Carbon Emissions: 169.97655734055104gCO2e
+- Task Memory Energy Consumption (exc. PUE): 0.15427427262500004kWh
+- Task Memory Energy Consumption (inc. PUE): 0.15427427262500004kWh
+- Operational Carbon Emissions: 162.35457859454584gCO2e
 - Embodied Carbon Emissions: 8.397422490937203gCO2e
-- Total Carbon Emissions: 178.37397983148824gCO2e
+- Total Carbon Emissions: 170.75200108548304gCO2e
 
-Reserved Memory Energy Consumption: 0.33602756018518515kWh
-Reserved Memory Carbon Emissions: 46.877290999074084gCO2e
-% CPU [32.01%] | % Memory [67.99%]
+Node Memory Energy Consumption: 0.24957857407999975kWh
+Node Memory Carbon Emissions: 34.790976103839974gCO2e
