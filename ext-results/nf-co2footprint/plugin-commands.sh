@@ -19,7 +19,7 @@ nextflow plugin nf-co2footprint:postRun --config conf/gu-nxf.config --tracePath 
 nextflow plugin nf-co2footprint:postRun --config conf/gu-nxf.config --tracePath traces/gu-rnaseq-3.csv --delimiter ','
 
 
-# hu-cluster (memory: 0.090, 0.085, 0.089, 0.083) -> 0.087
+# hu-cluster (memory: 0.087)
 nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath traces/hu-atacseq-1.csv --delimiter ','
 nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath traces/hu-atacseq-2.csv --delimiter ','
 nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath traces/hu-atacseq-3.csv --delimiter ','
