@@ -1,0 +1,2 @@
+models/powersave-gpgnode-16-bg-model.txt
+[ 0.5091727272727274, 52.88742424242425 ]

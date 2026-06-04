@@ -76,55 +76,31 @@ def get_active_period_data(run, node):
 
 
 def get_rapl_for_period(start_time, end_time, package_log, dram_log):
-    calculated_consumption = False 
-    position = 0
-    start_point_found = False
-    energy_consumed = 0
-    start_energy = 0
-    overflows = 0
+    def compute_energy(log, overflow_max):
+        start_energy = None
+        prev_energy = None
+        overflows = 0
 
-    while not calculated_consumption and position < len(package_log):
-        if not start_point_found:
-            if start_time <= package_log[position][0]:
-                start_point_found = True
-                start_energy = package_log[position][1]
-                position = position - 1
-        else:
-            if package_log[position][1] < package_log[position - 1][1]:
-                overflows += 1
-            if end_time <= package_log[position][0]: 
-                energy_consumed = (package_log[position][1] + (overflows * rapl_max_value_overflow) - start_energy) * energy_unit_joules
-                calculated_consumption = True
-        position += 1
+        for ts, energy in log:
+            if start_energy is None:
+                if ts >= start_time:
+                    start_energy = energy
+                    prev_energy = energy
+            else:
+                if energy < prev_energy:
+                    overflows += 1
+                prev_energy = energy
 
-    if not calculated_consumption:
-        energy_consumed = (package_log[-1][1] + (overflows * rapl_max_value_overflow) - start_energy) * energy_unit_joules
+            if start_energy is not None and ts >= end_time:
+                return (energy + overflows * overflow_max - start_energy) * energy_unit_joules
 
-    calculated_consumption = False 
-    position = 0
-    start_point_found = False
-    dram_energy_consumed = 0
-    start_energy = 0
-    overflows = 0
+        if start_energy is None:
+            return 0.0
+        return (log[-1][1] + overflows * overflow_max - start_energy) * energy_unit_joules
 
-    while not calculated_consumption and position < len(dram_log):
-        if not start_point_found:
-            if start_time <= dram_log[position][0]:
-                start_point_found = True
-                start_energy = dram_log[position][1]
-                position = position - 1
-        else:
-            if dram_log[position][1] < dram_log[position - 1][1]:
-                overflows += 1
-            if end_time <= dram_log[position][0]: 
-                dram_energy_consumed = (dram_log[position][1] + (overflows * rapl_DRAM_max_value_overflow) - start_energy) * energy_unit_joules
-                calculated_consumption = True
-        position += 1
-
-    if not calculated_consumption:
-        dram_energy_consumed = (dram_log[-1][1] + (overflows * rapl_DRAM_max_value_overflow) - start_energy) * energy_unit_joules
-
-    return (energy_consumed, dram_energy_consumed)
+    pkg_energy = compute_energy(package_log, rapl_max_value_overflow)
+    dram_energy = compute_energy(dram_log, rapl_DRAM_max_value_overflow)
+    return pkg_energy, dram_energy
 
 
 with open(f'{workflow}-runs.csv', 'w') as outfile:

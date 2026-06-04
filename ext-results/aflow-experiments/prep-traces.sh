@@ -4,7 +4,7 @@
 
 experiment=$1
 
-mkdir ../../temp/aflow-traces/
+mkdir -p ../../temp/aflow-traces/
 
 cp $experiment/1/trace.csv ../../temp/aflow-traces/$experiment-1.csv
 cp $experiment/2/trace.csv ../../temp/aflow-traces/$experiment-2.csv
