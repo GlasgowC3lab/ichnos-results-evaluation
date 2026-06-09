@@ -1,5 +1,2 @@
-powersave-gpgnode-14-model.txt
-[ 0.5395545454545453, 57.593484848484856 ]
-Memory Draw: 0.36070312499999996
-Idle: 50.84
-Max: 104.48
+models/powersave-gpgnode-14-bg-model.txt
+[ 0.549451515151515, 57.88469696969698 ]

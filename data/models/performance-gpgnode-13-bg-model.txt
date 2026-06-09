@@ -1,2 +1,0 @@
-models/performance-gpgnode-13-bg-model.txt
-[ 0.7071060606060607, 64.16287878787881 ]

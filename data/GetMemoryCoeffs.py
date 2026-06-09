@@ -1,8 +1,8 @@
 import sys
 
 
-def read_memory_draw(node, gov):
-    with open(f'memory/memory-{node}-{gov}.csv', 'r') as f:
+def read_memory_draw(node, gov, background=''):
+    with open(f'memory/memory-{node}-{gov}{background}.csv', 'r') as f:
         lines = [line.strip().split(',') for line in f.readlines()[1:]]
 
     no_load_draw = float(lines[0][3])
@@ -13,7 +13,7 @@ def read_memory_draw(node, gov):
 
 
 def write_output(all_data):
-    filename = f'hu-mem-coeffs.txt'
+    filename = f'gu-mem-coeffs-bg.txt'
 
     with open(filename, 'w') as f:
         for node in all_data.keys():
@@ -27,14 +27,15 @@ def write_output(all_data):
 if __name__ == '__main__':
     total_mem = 256
     all_mem_coeffs = {}
-    nodes = ['huworkerc40', 'huworkerc42', 'huworkerc44', 'huworkerc45']
-    govs = ['ondemand', 'performance', 'powersave', 'schedutil']
+    # nodes = ['huworkerc40', 'huworkerc42', 'huworkerc44', 'huworkerc45']
+    nodes = ['gpgnode13', 'gpgnode14', 'gpgnode15', 'gpgnode16', 'gpgnode18']
+    govs = ['ondemand']#, 'performance', 'powersave', 'schedutil']
 
     for node in nodes:
         all_mem_coeffs[node] = {}
         for gov in govs:
             all_mem_coeffs[node][gov] = {}
-            mem_draw = read_memory_draw(node, gov)
+            mem_draw = read_memory_draw(node, gov, '-bg')
             all_mem_coeffs[node][gov] = mem_draw
 
     write_output(all_mem_coeffs)

@@ -1,5 +1,2 @@
-performance-gpgnode-14-model.txt
-[ 0.6850999999999996, 64.87712121212122 ]
-Memory Draw: 0.365546875
-Idle: 54.48
-Max: 124.63
+models/performance-gpgnode-14-bg-model.txt
+[ 0.6958090909090907, 65.06530303030304 ]

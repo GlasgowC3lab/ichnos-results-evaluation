@@ -1,2 +1,0 @@
-models/schedutil-gpgnode-16-bg-model.txt
-[ 0.6137575757575761, 57.91272727272728 ]

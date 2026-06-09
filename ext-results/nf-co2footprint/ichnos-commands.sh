@@ -89,3 +89,22 @@ python3 -m src.scripts.IchnosCF gu-nanoseq-3 gb-10022026-12022026-marg ondemand_
 python3 -m src.scripts.IchnosCF gu-atacseq-1 gb-27022026-28022026-marg ondemand_linear 5 1.0 0.392 64 4
 python3 -m src.scripts.IchnosCF gu-atacseq-2 gb-27022026-28022026-marg ondemand_linear 5 1.0 0.392 64 4
 python3 -m src.scripts.IchnosCF gu-atacseq-3 gb-27022026-28022026-marg ondemand_linear 5 1.0 0.392 64 4
+
+
+# background models experiment
+# gu - ondemand (mem draw, mem GB, no. nodes = 4)
+python3 -m src.scripts.IchnosCF gu-chipseq-1 gb-2026-01-28-2026-01-30 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-chipseq-2 gb-2026-01-28-2026-01-30 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-chipseq-3 gb-2026-01-28-2026-01-30 ondemand-bg_linear 5 1.0 0.392 64 4
+
+python3 -m src.scripts.IchnosCF gu-rnaseq-1 gb-2026-01-28-2026-01-30 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-rnaseq-2 gb-2026-01-28-2026-01-30 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-rnaseq-3 gb-2026-01-28-2026-01-30 ondemand-bg_linear 5 1.0 0.392 64 4
+
+python3 -m src.scripts.IchnosCF gu-nanoseq-1 gb-2026-02-10-2026-02-12 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-nanoseq-2 gb-2026-02-10-2026-02-12 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-nanoseq-3 gb-2026-02-10-2026-02-12 ondemand-bg_linear 5 1.0 0.392 64 4
+
+python3 -m src.scripts.IchnosCF gu-atacseq-1 gb-2026-02-27-2026-02-28 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-atacseq-2 gb-2026-02-27-2026-02-28 ondemand-bg_linear 5 1.0 0.392 64 4
+python3 -m src.scripts.IchnosCF gu-atacseq-3 gb-2026-02-27-2026-02-28 ondemand-bg_linear 5 1.0 0.392 64 4

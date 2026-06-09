@@ -1,0 +1,5 @@
+powersave-gpgnode-13-model.txt
+[ 0.5577, 57.08409090909094 ]
+Memory Draw: 0.40604166666666663
+Idle: 50.18666666666667
+Max: 105.46
