@@ -1,3 +1,4 @@
 name,launch date,source,intended usage,tdp (W),physicalCores,logicalCores,process,die area
 intel xeon E5-2640 v2,,,,95,8,16,,
 intel xeon silver 4314,,,,135,16,32,,
+intel xeon platinum 8275CL CPU @ 3.00GHz,,,,240,48,96,,

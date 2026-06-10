@@ -43,3 +43,22 @@ nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath 
 nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath traces/hu-rangeland-1.csv --delimiter ','
 nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath traces/hu-rangeland-2.csv --delimiter ','
 nextflow plugin nf-co2footprint:postRun --config conf/hu-nxf.config --tracePath traces/hu-rangeland-3.csv --delimiter ','
+
+# aws-cluster (0.362 / 0.343) -> 0.3525
+# TDP 240W: cpu-world.com/CPUs/Xeon/Intel-Xeon%208275CL.html
+
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-atacseq-1.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-atacseq-2.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-atacseq-3.csv --delimiter ','
+
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-nanoseq-1.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-nanoseq-2.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-nanoseq-3.csv --delimiter ','
+
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-chipseq-1.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-chipseq-2.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-chipseq-3.csv --delimiter ','
+
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-rnaseq-1.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-rnaseq-2.csv --delimiter ','
+nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-rnaseq-3.csv --delimiter ','

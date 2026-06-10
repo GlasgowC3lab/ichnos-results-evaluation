@@ -1,0 +1,15 @@
+{
+  "by_type": {
+    "package": {
+      "intervals_clipped": 0,
+      "intervals_requested": 2,
+      "intervals_skipped_outside_range": 0,
+      "nodes": {
+        "ip172311173": 0.24979279426465412,
+        "ip1723112170": 0.2534227050841656
+      },
+      "total_kwh": 0.5032154993488197
+    }
+  },
+  "rapl_max_value": 262144000000
+}
