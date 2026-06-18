@@ -1,0 +1,26 @@
+Detailed Report for med_cpu_med_mem-2-1-schedutil_linear
+Top 10 Tasks - ranked by average CO2e then runtime:
+ichnos_cpu_med_mem_med_w01_t01:0 average_co2e=0.0010 runtime_s=180.00
+ichnos_cpu_med_mem_med_w04_t01:12 average_co2e=0.0010 runtime_s=156.00
+ichnos_cpu_med_mem_med_w01_t02:1 average_co2e=0.0009 runtime_s=180.00
+ichnos_cpu_med_mem_med_w03_t03:10 average_co2e=0.0009 runtime_s=165.00
+ichnos_cpu_med_mem_med_w02_t01:4 average_co2e=0.0009 runtime_s=172.00
+ichnos_cpu_med_mem_med_w03_t02:9 average_co2e=0.0009 runtime_s=165.00
+ichnos_cpu_med_mem_med_w04_t03:14 average_co2e=0.0009 runtime_s=156.00
+ichnos_cpu_med_mem_med_w03_t01:8 average_co2e=0.0009 runtime_s=165.00
+ichnos_cpu_med_mem_med_w02_t03:6 average_co2e=0.0009 runtime_s=172.00
+ichnos_cpu_med_mem_med_w02_t02:5 average_co2e=0.0009 runtime_s=172.00
+
+Top 10 Tasks - ranked by marginal CO2e then runtime:
+ichnos_cpu_med_mem_med_w01_t01:0 marginal_co2e=0.0010 runtime_s=180.00
+ichnos_cpu_med_mem_med_w04_t01:12 marginal_co2e=0.0010 runtime_s=156.00
+ichnos_cpu_med_mem_med_w01_t02:1 marginal_co2e=0.0009 runtime_s=180.00
+ichnos_cpu_med_mem_med_w03_t03:10 marginal_co2e=0.0009 runtime_s=165.00
+ichnos_cpu_med_mem_med_w02_t01:4 marginal_co2e=0.0009 runtime_s=172.00
+ichnos_cpu_med_mem_med_w03_t02:9 marginal_co2e=0.0009 runtime_s=165.00
+ichnos_cpu_med_mem_med_w04_t03:14 marginal_co2e=0.0009 runtime_s=156.00
+ichnos_cpu_med_mem_med_w03_t01:8 marginal_co2e=0.0009 runtime_s=165.00
+ichnos_cpu_med_mem_med_w02_t03:6 marginal_co2e=0.0009 runtime_s=172.00
+ichnos_cpu_med_mem_med_w02_t02:5 marginal_co2e=0.0009 runtime_s=172.00
+
+The top 10 marginal CO2e tasks coincide with the top 10 average CO2e tasks.

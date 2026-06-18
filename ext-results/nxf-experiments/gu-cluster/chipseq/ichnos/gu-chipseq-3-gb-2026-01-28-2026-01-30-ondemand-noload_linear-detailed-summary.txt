@@ -1,4 +1,4 @@
-Detailed Report for gu-chipseq-3-gb-2026-01-28-2026-01-30-ondemand_linear
+Detailed Report for gu-chipseq-3-gb-2026-01-28-2026-01-30-ondemand-noload_linear
 Top 10 Tasks - ranked by average CO2e then runtime:
 NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX:295 average_co2e=4.8099 runtime_s=205.00
 NFCORE_CHIPSEQ:CHIPSEQ:DEEPTOOLS_COMPUTEMATRIX:273 average_co2e=4.5588 runtime_s=210.00

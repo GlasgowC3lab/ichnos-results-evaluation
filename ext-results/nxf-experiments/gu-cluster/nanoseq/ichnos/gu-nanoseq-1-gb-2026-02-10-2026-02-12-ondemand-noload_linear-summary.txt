@@ -1,7 +1,7 @@
 Carbon Footprint Trace:
 - carbon-intensity: gb-2026-02-10-2026-02-12
 - power-usage-effectiveness: 1.0
-- power model selected: ondemand_linear
+- power model selected: ondemand-noload_linear
 - memory-power-draw: 0.392
 
 Ichnos Output:

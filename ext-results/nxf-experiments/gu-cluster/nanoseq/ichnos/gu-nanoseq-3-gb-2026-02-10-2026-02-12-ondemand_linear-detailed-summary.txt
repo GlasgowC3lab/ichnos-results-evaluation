@@ -1,4 +1,4 @@
-Detailed Report for gu-nanoseq-3-gb-2026-02-10-2026-02-12-ondemand-bg_linear
+Detailed Report for gu-nanoseq-3-gb-2026-02-10-2026-02-12-ondemand_linear
 Top 10 Tasks - ranked by average CO2e then runtime:
 NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN:23 average_co2e=6.1581 runtime_s=254.00
 NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN:27 average_co2e=6.0296 runtime_s=81.00

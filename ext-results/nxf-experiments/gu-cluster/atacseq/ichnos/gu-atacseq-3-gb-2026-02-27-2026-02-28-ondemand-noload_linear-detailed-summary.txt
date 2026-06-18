@@ -1,4 +1,4 @@
-Detailed Report for gu-atacseq-3-gb-2026-02-27-2026-02-28-ondemand_linear
+Detailed Report for gu-atacseq-3-gb-2026-02-27-2026-02-28-ondemand-noload_linear
 Top 10 Tasks - ranked by average CO2e then runtime:
 NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM:22 average_co2e=4.3902 runtime_s=201.00
 NFCORE_ATACSEQ:ATACSEQ:FASTQ_ALIGN_BWA:BWA_MEM:21 average_co2e=3.8897 runtime_s=199.00

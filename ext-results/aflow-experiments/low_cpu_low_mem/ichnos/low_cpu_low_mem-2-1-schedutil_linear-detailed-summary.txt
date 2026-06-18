@@ -1,26 +1,26 @@
 Detailed Report for low_cpu_low_mem-2-1-schedutil_linear
 Top 10 Tasks - ranked by average CO2e then runtime:
-ichnos_cpu_low_mem_low_w02_t03:6 average_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w01_t02:1 average_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w02_t01:4 average_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w01_t03:2 average_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w01_t04:3 average_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w02_t04:7 average_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w02_t02:5 average_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w01_t01:0 average_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w04_t02:13 average_co2e=0.0000 runtime_s=84.00
-ichnos_cpu_low_mem_low_w03_t04:11 average_co2e=0.0000 runtime_s=89.00
+ichnos_cpu_low_mem_low_w04_t03:14 average_co2e=0.0002 runtime_s=20.00
+ichnos_cpu_low_mem_low_w01_t03:2 average_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w04_t04:15 average_co2e=0.0002 runtime_s=20.00
+ichnos_cpu_low_mem_low_w03_t03:10 average_co2e=0.0002 runtime_s=28.00
+ichnos_cpu_low_mem_low_w01_t04:3 average_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w01_t01:0 average_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w01_t02:1 average_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w02_t01:4 average_co2e=0.0002 runtime_s=36.00
+ichnos_cpu_low_mem_low_w03_t01:8 average_co2e=0.0002 runtime_s=28.00
+ichnos_cpu_low_mem_low_w02_t03:6 average_co2e=0.0002 runtime_s=36.00
 
 Top 10 Tasks - ranked by marginal CO2e then runtime:
-ichnos_cpu_low_mem_low_w02_t03:6 marginal_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w01_t02:1 marginal_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w02_t01:4 marginal_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w01_t03:2 marginal_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w01_t04:3 marginal_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w02_t04:7 marginal_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w02_t02:5 marginal_co2e=0.0000 runtime_s=95.00
-ichnos_cpu_low_mem_low_w01_t01:0 marginal_co2e=0.0000 runtime_s=102.00
-ichnos_cpu_low_mem_low_w04_t02:13 marginal_co2e=0.0000 runtime_s=84.00
-ichnos_cpu_low_mem_low_w03_t04:11 marginal_co2e=0.0000 runtime_s=89.00
+ichnos_cpu_low_mem_low_w04_t03:14 marginal_co2e=0.0002 runtime_s=20.00
+ichnos_cpu_low_mem_low_w01_t03:2 marginal_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w04_t04:15 marginal_co2e=0.0002 runtime_s=20.00
+ichnos_cpu_low_mem_low_w03_t03:10 marginal_co2e=0.0002 runtime_s=28.00
+ichnos_cpu_low_mem_low_w01_t04:3 marginal_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w01_t01:0 marginal_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w01_t02:1 marginal_co2e=0.0002 runtime_s=43.00
+ichnos_cpu_low_mem_low_w02_t01:4 marginal_co2e=0.0002 runtime_s=36.00
+ichnos_cpu_low_mem_low_w03_t01:8 marginal_co2e=0.0002 runtime_s=28.00
+ichnos_cpu_low_mem_low_w02_t03:6 marginal_co2e=0.0002 runtime_s=36.00
 
 The top 10 marginal CO2e tasks coincide with the top 10 average CO2e tasks.

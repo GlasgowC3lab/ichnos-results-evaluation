@@ -1,4 +1,4 @@
-Detailed Report for gu-rnaseq-3-gb-2026-01-28-2026-01-30-ondemand_linear
+Detailed Report for gu-rnaseq-3-gb-2026-01-28-2026-01-30-ondemand-noload_linear
 Top 10 Tasks - ranked by average CO2e then runtime:
 NFCORE_RNASEQ:PREPARE_GENOME:SALMON_INDEX:22 average_co2e=2.2597 runtime_s=202.00
 NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:STAR_ALIGN_IGENOMES:38 average_co2e=2.2259 runtime_s=145.00
