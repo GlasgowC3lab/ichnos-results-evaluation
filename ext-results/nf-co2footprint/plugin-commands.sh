@@ -61,4 +61,3 @@ nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath
 
 nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-rnaseq-1.csv --delimiter ','
 nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-rnaseq-2.csv --delimiter ','
-nextflow plugin nf-co2footprint:postRun --config conf/aws-nxf.config --tracePath traces/aws-rnaseq-3.csv --delimiter ','

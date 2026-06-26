@@ -18,9 +18,9 @@ class TraceRecord:
         """
         self._raw = self.get_raw_data_map(fields, data, delimiter)
         self._duration = self._raw['duration']
-        self._start = self._raw.get('Start timestamp')
-        self._complete = self._raw.get('End timestamp')
-        self._task_id = self._raw['Id']
+        self._start = self._raw.get('Start timestamp') # self._raw['start'] # 
+        self._complete = self._raw.get('End timestamp') # self._raw['complete'] #
+        self._task_id = self._raw['Id']  # self._raw['task_id'] # 
         self._hostname = self._raw['Hostname']
 
     def get_raw_data_map(self, fields: str, data: str, delimiter: str) -> dict:

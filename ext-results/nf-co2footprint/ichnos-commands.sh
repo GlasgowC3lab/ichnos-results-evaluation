@@ -45,21 +45,40 @@ python3 -m src.scripts.IchnosCF gu-atacseq-3 gb-2026-02-27-2026-02-28 ondemand_l
 
 
 # aws - performance
-python3 -m src.scripts.IchnosCF aws-atacseq-1 1.0 performance_linear 5 1.0 0.392 192 2
-python3 -m src.scripts.IchnosCF aws-atacseq-2 1.0 performance_linear 5 1.0 0.392 192 2
-python3 -m src.scripts.IchnosCF aws-atacseq-3 1.0 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-atacseq-1 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-atacseq-2 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-atacseq-3 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
 
-python3 -m src.scripts.IchnosCF aws-chipseq-1 1.0 performance_linear 5 1.0 0.392 192 2
-python3 -m src.scripts.IchnosCF aws-chipseq-2 1.0 performance_linear 5 1.0 0.392 192 2
-python3 -m src.scripts.IchnosCF aws-chipseq-3 1.0 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-chipseq-1 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-chipseq-2 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-chipseq-3 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
 
-python3 -m src.scripts.IchnosCF aws-nanoseq-1 1.0 performance_linear 5 1.0 0.392 192 2
-python3 -m src.scripts.IchnosCF aws-nanoseq-2 1.0 performance_linear 5 1.0 0.392 192 2
-python3 -m src.scripts.IchnosCF aws-nanoseq-3 1.0 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-nanoseq-1 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-nanoseq-2 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-nanoseq-3 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
 
+python3 -m src.scripts.IchnosCF aws-rnaseq-1 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-rnaseq-2 ie-2026-06-01-2026-06-12 performance_linear 5 1.0 0.392 192 2
 
 
 # use marginal carbon intensity
+
+# aws - performance
+python3 -m src.scripts.IchnosCF aws-atacseq-1 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-atacseq-2 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-atacseq-3 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+
+python3 -m src.scripts.IchnosCF aws-chipseq-1 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-chipseq-2 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-chipseq-3 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+
+python3 -m src.scripts.IchnosCF aws-nanoseq-1 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-nanoseq-2 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-nanoseq-3 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+
+python3 -m src.scripts.IchnosCF aws-rnaseq-1 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+python3 -m src.scripts.IchnosCF aws-rnaseq-2 ie-01062026-12062026-marg performance_linear 5 1.0 0.392 192 2
+
 
 # hu - schedutil (mem draw, mem GB, no. nodes = 4) 
 python3 -m src.scripts.IchnosCF hu-chipseq-1 de-17112025-24112025-marg schedutil_linear 5 1.0 0.392 256 4

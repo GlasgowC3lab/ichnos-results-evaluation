@@ -53,6 +53,10 @@ if __name__ == "__main__":
         [('2026', '03', '05'), ('2026', '03', '06'), ('2026', '03', '07')]
     ]
 
+    ie_dates = [
+        [('2026', '06', '01'), ('2026', '06', '02'), ('2026', '06', '03'), ('2026', '06', '04'), ('2026', '06', '05'), ('2026', '06', '06'), ('2026', '06', '07'), ('2026', '06', '08'), ('2026', '06', '09'), ('2026', '06', '10'), ('2026', '06', '11'), ('2026', '06', '12')]
+    ]
+
     for dates in gb_dates:
         dates_data = []
         for day in dates:
@@ -73,6 +77,18 @@ if __name__ == "__main__":
             dates_data.extend(processed_day)
 
         with open(f'ci/de-{'-'.join(dates[0])}-{'-'.join(dates[-1])}.csv', 'w') as file:
+            file.write('date,start,actual\n')
+            for entry in dates_data:
+                file.write(f"{','.join(entry)}\n")
+
+    for dates in ie_dates:
+        dates_data = []
+        for day in dates:
+            day_data = get_ci_data('IE', format_date_start(day), format_date_end(day))
+            processed_day = process(day_data)
+            dates_data.extend(processed_day)
+
+        with open(f'ci/ie-{'-'.join(dates[0])}-{'-'.join(dates[-1])}.csv', 'w') as file:
             file.write('date,start,actual\n')
             for entry in dates_data:
                 file.write(f"{','.join(entry)}\n")

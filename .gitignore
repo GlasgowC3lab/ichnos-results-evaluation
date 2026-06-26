@@ -3,6 +3,7 @@
 *marg*
 *ext-results/nf-co2footprint/ci/*
 *.nextflow
+*.DS_Store
 
 # Generic
 __pycache__/
