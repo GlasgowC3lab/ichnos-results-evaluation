@@ -1,0 +1,123 @@
+{
+  "ip-172-31-1-173": {
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz",
+    "memory": 189,
+    "performance": {
+      "execution_mode": "ssh_sudo",
+      "linear": [
+        4.043942424242425,
+        152.9162121212121
+      ],
+      "max_watts": 479.6433333333334,
+      "measurement_configuration": "kubernetes_up",
+      "mem_draw": 0.362,
+      "mem_draw_idle": 0.211,
+      "mem_draw_loaded_avg": 0.362,
+      "memory": 189,
+      "min_watts": 54.95666666666667
+    },
+    "system_cores": 96
+  },
+  "ip-172-31-10-128": {
+    "cpu_count": 2,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00GHz",
+    "memory": 192,
+    "performance": {
+      "linear": [
+        3.3445515151515153,
+        108.32333333333334
+      ],
+      "max_watts": 408.22333333333336,
+      "mem_draw": 0.11672743055555555,
+      "min_watts": 30.599999999999998
+    },
+    "system_cores": 72,
+    "tdp_per_core": 8.333333333333334
+  },
+  "ip-172-31-11-42": {
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00GHz",
+    "memory": 189,
+    "performance": {
+      "execution_mode": "ssh_sudo",
+      "linear": [
+        2.7927575757575758,
+        110.49878787878791
+      ],
+      "max_watts": 361.53,
+      "measurement_configuration": "kubernetes_up",
+      "mem_draw": 0.331,
+      "mem_draw_idle": 0.232,
+      "mem_draw_loaded_avg": 0.331,
+      "memory": 189,
+      "min_watts": 55.663333333333334
+    },
+    "system_cores": 72
+  },
+  "ip-172-31-12-170": {
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz",
+    "memory": 189,
+    "performance": {
+      "execution_mode": "ssh_sudo",
+      "linear": [
+        3.9561575757575755,
+        151.0415151515152
+      ],
+      "max_watts": 478.91,
+      "measurement_configuration": "kubernetes_up",
+      "mem_draw": 0.343,
+      "mem_draw_idle": 0.239,
+      "mem_draw_loaded_avg": 0.343,
+      "memory": 189,
+      "min_watts": 78.92333333333333
+    },
+    "system_cores": 96
+  },
+  "ip-172-31-13-221": {
+    "cpu_count": 2,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00GHz",
+    "memory": 192,
+    "performance": {
+      "linear": [
+        3.31559090909091,
+        107.4777272727273
+      ],
+      "max_watts": 406.05333333333334,
+      "mem_draw": 0.103515625,
+      "min_watts": 31.929999999999996
+    },
+    "system_cores": 72,
+    "tdp_per_core": 8.333333333333334
+  },
+  "ip-172-31-14-247": {
+    "cpu_count": 2,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00GHz",
+    "memory": 192,
+    "performance": {
+      "linear": [
+        3.11620303030303,
+        100.60136363636367
+      ],
+      "max_watts": 378.87999999999994,
+      "mem_draw": 0.11228298611111111,
+      "min_watts": 29.060000000000002
+    },
+    "system_cores": 72,
+    "tdp_per_core": 8.333333333333334
+  },
+  "ip-172-31-4-127": {
+    "cpu_count": 2,
+    "cpu_model": "Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00GHz",
+    "memory": 192,
+    "performance": {
+      "linear": [
+        3.273166666666667,
+        105.43075757575758
+      ],
+      "max_watts": 395.41333333333336,
+      "mem_draw": 0.10046006944444445,
+      "min_watts": 26.073333333333334
+    },
+    "system_cores": 72,
+    "tdp_per_core": 8.333333333333334
+  }
+}

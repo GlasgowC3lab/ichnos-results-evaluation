@@ -1,0 +1,1 @@
+2025-11-18 19:24:03	4h 11m 6s	shrivelled_faggin	OK	f421ddc35d81a0561685927c03e03995	1f244a37-1867-4aab-a883-9633bcf5a6bc	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config

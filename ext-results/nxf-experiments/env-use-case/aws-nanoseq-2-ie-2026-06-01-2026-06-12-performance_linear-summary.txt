@@ -1,0 +1,20 @@
+Carbon Footprint Trace:
+- carbon-intensity: ie-2026-06-01-2026-06-12
+- power-usage-effectiveness: 1.0
+- power model selected: performance_linear
+- memory-power-draw: 0.392
+
+Ichnos Output:
+- Static Energy Consumption (exc. PUE): 0.25628295471380474kWh
+- Energy Consumption (exc. PUE): 0.3618291736925479kWh
+- Energy Consumption (inc. PUE): 0.3618291736925479kWh
+- Task Memory Energy Consumption (exc. PUE): 0.03817949500000001kWh
+- Task Memory Energy Consumption (inc. PUE): 0.03817949500000001kWh
+- Operational Carbon Emissions: 96.95498853362031gCO2e
+- Embodied Carbon Emissions: 1.5516943620554158gCO2e
+- Total Carbon Emissions: 98.50668289567572gCO2e
+- Total Water Footprint: 0.26681729165360074l
+- Total Land Use Footprint: 0.7236273039574842sqm
+
+Node Memory Energy Consumption: 0.11326287000000002kWh
+Node Memory Carbon Emissions: 27.43686414gCO2e

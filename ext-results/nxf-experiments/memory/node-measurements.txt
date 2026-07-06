@@ -1,0 +1,29 @@
+hu-worker-c40
+- no load: 0.023 W/GB | load: 0.055 W/GB
+
+hu-worker-c42
+- no load: 0.030 W/GB | load: 0.060 W/GB
+
+hu-worker-c44
+- no load: 0.026 W/GB | load: 0.058 W/GB
+
+hu-worker-c45
+- no load: 0.032 W/GB | load: 0.062 W/GB
+
+gpgnode-13
+- 
+
+gpgnode-14
+- 
+
+gpgnode-15
+- no load: 0.231 W/GB | load: 0.255 W/GB
+
+gpgnode-16
+- 
+
+gpgnode-17
+- 
+
+gpgnode-18
+- 

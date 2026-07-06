@@ -1,0 +1,183 @@
+Energy Summary for nf-core-atacseq / nfcore-atacseq-test-full-20260608T084233Z-2
+Generated at: 2026-06-08T13:10:21.636902+00:00
+
+Inputs:
+- trace_file: /home/ubuntu/workload-experiment-harness/runs/nf-core-atacseq/nfcore-atacseq-test-full-20260608T084233Z-2/nextflow-trace.csv
+- trace_granularity: task
+- task_trace: /home/ubuntu/workload-experiment-harness/runs/nf-core-atacseq/nfcore-atacseq-test-full-20260608T084233Z-2/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_task_trace.csv
+- total_node_memory_trace: /home/ubuntu/workload-experiment-harness/runs/nf-core-atacseq/nfcore-atacseq-test-full-20260608T084233Z-2/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_task_trace.csv
+- interval_trace: None
+- pod_pattern: ^nf-
+- pod_label_selector: nextflow.io/sessionId=uuid-dc66650e-e981-43cc-b526-7b3a3a77295e
+- analysis_target: spark-peak-execution-memory
+- analysis_model_variant: old
+- model_environment: aws
+- host_config: /home/ubuntu/ichnos/node_config_models/nodes.json
+- model_name: performance_linear
+- node_governors: {"ip-172-31-1-173": "performance", "ip-172-31-12-170": "performance"}
+
+Energy Totals:
+- ichnos_energy_kwh: 0.5410430496212122
+- ichnos_cpu_energy_kwh: 0.5410430496212122
+- ichnos_memory_energy_kwh: 0.10429939166666669
+- ichnos_total_energy_kwh: 0.6453424412878789
+- total_node_memory_energy_kwh: 0.23742227249999998
+- ichnos_total_with_total_node_memory_energy_kwh: 0.7784653221212121
+- default_coeff_ichnos_memory_energy_kwh: 0.10429939166666669
+- default_coeff_ichnos_total_energy_kwh: 0.6453424412878789
+- default_coeff_total_node_memory_energy_kwh: 0.26367096
+- default_coeff_ichnos_total_with_total_node_memory_energy_kwh: 0.8047140096212122
+- rss_ichnos_cpu_energy_kwh: None
+- rss_ichnos_memory_energy_kwh: None
+- rss_ichnos_total_energy_kwh: None
+- default_coeff_rss_ichnos_memory_energy_kwh: None
+- default_coeff_rss_ichnos_total_energy_kwh: None
+- proc_direct_ichnos_energy_kwh: 0.6114022403355641
+- proc_direct_ichnos_cpu_energy_kwh: 0.6114022403355641
+- proc_direct_plus_k8s_ichnos_energy_kwh: 0.6114022403355641
+- proc_sampled_ichnos_energy_kwh: 0.6114022403355641
+- proc_direct_rapl_package_kwh: 0.784773010459598
+- proc_direct_rapl_total_with_total_node_memory_kwh: 1.058417834765292
+- rapl_package_kwh: 0.7182137966239676
+- rapl_dram_kwh: 0.273644824305694
+- rapl_total_kwh: 0.9918586209296616
+- total_node_memory_rapl_package_kwh: 0.7182137966239676
+- total_node_memory_rapl_dram_kwh: 0.273644824305694
+- total_node_memory_rapl_total_kwh: 0.9918586209296616
+- alt_rapl_package_kwh: 0.7182741045983333
+- alt_rapl_dram_kwh: 0.2736746659027778
+- alt_rapl_total_kwh: 0.9919487705011111
+- kepler_package_kwh: 0.35280009175274724
+- kepler_dram_kwh: 0.03697453884571064
+- trace_memory_source: nextflow_trace_memory
+- process_polling_freq_seconds: 5.0
+- rapl_polling_freq_seconds: 1.0
+- ceph_io_polling_freq_seconds: 5.0
+
+- proc_direct_trace: /home/ubuntu/workload-experiment-harness/runs/nf-core-atacseq/nfcore-atacseq-test-full-20260608T084233Z-2/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_proc_direct_trace.csv
+- proc_direct_plus_k8s_trace: /home/ubuntu/workload-experiment-harness/runs/nf-core-atacseq/nfcore-atacseq-test-full-20260608T084233Z-2/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_proc_direct_plus_k8s_trace.csv
+- proc_sampled_trace: /home/ubuntu/workload-experiment-harness/runs/nf-core-atacseq/nfcore-atacseq-test-full-20260608T084233Z-2/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_proc_sampled_trace.csv
+
+- proc_direct_ichnos_energy_kwh: 0.6114022403355641
+- proc_direct_plus_k8s_ichnos_energy_kwh: 0.6114022403355641
+- proc_sampled_ichnos_energy_kwh: 0.6114022403355641
+
+Ichnos Estimate:
+- summary_path: /home/ubuntu/ichnos/output/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_task_trace-1-performance_linear-summary.txt
+- energy_exc_pue_kwh: 0.5410430496212122
+- energy_inc_pue_kwh: 0.6686956695373099
+- memory_energy_exc_pue_kwh: 0.10429939166666669
+- memory_energy_inc_pue_kwh: 0.10429939166666669
+
+RSS Ichnos Estimate:
+- unavailable
+
+Total Node Memory Estimate:
+- fallback_memory_coeff_w_per_gb: 0.392
+- total_kwh: 0.23742227249999998
+- missing_hosts: none
+- fallback_memory_coeff_hosts: none
+- ip172311173: active_seconds=6727.0, memory_gb=189.0, memory_coeff_w_per_gb=0.362, energy_kwh=0.127846635
+- ip1723112170: active_seconds=6085.0, memory_gb=189.0, memory_coeff_w_per_gb=0.343, energy_kwh=0.1095756375
+
+Default Coeff Total Node Memory Estimate:
+- fallback_memory_coeff_w_per_gb: 0.392
+- total_kwh: 0.26367096
+- missing_hosts: none
+- fallback_memory_coeff_hosts: ip172311173, ip1723112170
+- ip172311173: active_seconds=6727.0, memory_gb=189.0, memory_coeff_w_per_gb=0.392, energy_kwh=0.13844166
+- ip1723112170: active_seconds=6085.0, memory_gb=189.0, memory_coeff_w_per_gb=0.392, energy_kwh=0.1252293
+
+Ichnos Estimate From /proc Samples (Direct Executor Only):
+- summary_path: /home/ubuntu/ichnos/output/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_proc_direct_trace-1-performance_linear-summary.txt
+- energy_exc_pue_kwh: 0.6114022403355641
+- energy_inc_pue_kwh: 0.6976434375779397
+- memory_energy_exc_pue_kwh: 0.01343672903672586
+- memory_energy_inc_pue_kwh: 0.01343672903672586
+
+Ichnos Estimate From /proc Samples (Direct + Kubernetes/Ceph Overhead):
+- summary_path: /home/ubuntu/ichnos/output/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_proc_direct_plus_k8s_trace-1-performance_linear-summary.txt
+- energy_exc_pue_kwh: 0.6114022403355641
+- energy_inc_pue_kwh: 0.7248599564545384
+- memory_energy_exc_pue_kwh: 0.0634764638059245
+- memory_energy_inc_pue_kwh: 0.0634764638059245
+
+Ichnos Estimate From /proc Samples (Direct + Kubernetes + Other Overhead):
+- summary_path: /home/ubuntu/ichnos/output/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-2_proc_sampled_trace-1-performance_linear-summary.txt
+- energy_exc_pue_kwh: 0.6114022403355641
+- energy_inc_pue_kwh: 0.7267749912736752
+- memory_energy_exc_pue_kwh: 0.06403791979777224
+- memory_energy_inc_pue_kwh: 0.06403791979777224
+
+Kepler:
+- package_kwh: 0.35280009175274724
+- dram_kwh: 0.03697453884571064
+- application_runtime_seconds: 7183.0
+
+Ceph IO Metrics:
+- sample_count: 1315
+- successful_samples: 1314
+- ceph_avg_read_bytes_per_sec: 18820137.925570738
+- ceph_avg_write_bytes_per_sec: 23564270.489870533
+- ceph_avg_read_mib_per_sec: 17.948282170840013
+- ceph_avg_write_mib_per_sec: 22.47263955103925
+
+RAPL Trace Totals:
+- package_kwh: 0.7182137966239676
+- DRAM_kwh: 0.273644824305694
+
+Alt-RAPL Trace Totals:
+- alt_package_kwh: 0.7182741045983333
+- alt_DRAM_kwh: 0.2736746659027778
+
+Error Metrics (signed percentage error; positive means the estimate is above the baseline, negative means it is below; package compares Ichnos CPU to RAPL package, memory compares Ichnos memory to RAPL DRAM, total compares CPU+memory to RAPL package+DRAM):
+- package_ichnos_cpu_vs_rapl_package_pct: -24.66824611773867
+- package_ichnos_cpu_vs_kepler_package_pct: 53.35683359186629
+- ichnos_vs_rapl_pct: -24.66824611773867
+- ichnos_vs_kepler_pct: 53.35683359186629
+- ichnos_cpu_vs_rapl_package_pct: -24.66824611773867
+- ichnos_memory_vs_rapl_dram_pct: -61.88512173350964
+- ichnos_total_vs_rapl_total_pct: -34.936045554254065
+- total_node_memory_vs_rapl_dram_pct: -13.23706812200807
+- ichnos_total_with_total_node_memory_vs_rapl_total_pct: -21.51448747891484
+- default_coeff_ichnos_memory_vs_rapl_dram_pct: -61.88512173350964
+- default_coeff_ichnos_total_vs_rapl_total_pct: -34.936045554254065
+- default_coeff_total_node_memory_vs_rapl_dram_pct: -3.6448211037793907
+- default_coeff_ichnos_total_with_total_node_memory_vs_rapl_total_pct: -18.868073267643744
+- rss_ichnos_memory_vs_rapl_dram_pct: None
+- rss_ichnos_total_vs_rapl_total_pct: None
+- default_coeff_rss_ichnos_memory_vs_rapl_dram_pct: None
+- default_coeff_rss_ichnos_total_vs_rapl_total_pct: None
+- proc_rss_memory_ichnos_vs_rapl_dram_pct: None
+- proc_rss_total_ichnos_vs_rapl_total_pct: None
+- proc_direct_ichnos_cpu_vs_rapl_package_pct: -14.871832982112199
+- proc_direct_total_with_total_node_memory_vs_rapl_total_pct: -14.420816140110047
+- proc_direct_ichnos_cpu_with_total_node_memory_vs_rapl_total_pct: -14.420816140110047
+- default_coeff_proc_direct_total_with_total_node_memory_vs_rapl_total_pct: -11.774401928838948
+- proc_direct_ichnos_cpu_vs_proc_window_rapl_package_pct: -22.091836469057498
+- proc_direct_total_with_total_node_memory_vs_proc_window_rapl_total_pct: -19.802512301411284
+- default_coeff_proc_direct_total_with_total_node_memory_vs_proc_window_rapl_total_pct: -17.32251936876944
+- proc_direct_ichnos_vs_rapl_pct: -14.871832982112199
+- proc_direct_ichnos_vs_trace_ichnos_pct: 13.00436088470425
+- proc_direct_plus_k8s_ichnos_vs_rapl_pct: -14.871832982112199
+- proc_direct_plus_k8s_ichnos_vs_trace_ichnos_pct: 13.00436088470425
+- proc_sampled_ichnos_vs_rapl_pct: -14.871832982112199
+- proc_sampled_ichnos_vs_trace_ichnos_pct: 13.00436088470425
+
+Average CPU per Node (trace-derived):
+- ip-172-31-1-173: avg_cpu_usage=460.94, avg_cpu_cores=4.61
+- ip-172-31-12-170: avg_cpu_usage=330.32, avg_cpu_cores=3.30
+
+CPU Attribution per Node (process-based):
+- ip-172-31-1-173: direct_executor_usage=5.55 cores (5.78%), kubernetes_ceph_overhead=1.02 cores (1.06%), non_kubernetes_overhead=0.12 cores (0.12%)
+- ip-172-31-12-170: direct_executor_usage=4.73 cores (4.93%), kubernetes_ceph_overhead=2.24 cores (2.33%), non_kubernetes_overhead=0.11 cores (0.12%)
+
+CPU Attribution Overall (process-based):
+- direct_executor_usage: avg_cpu_cores=10.28, pct_of_cluster_cpu=5.35%
+- kubernetes_ceph_overhead: avg_cpu_cores=3.26, pct_of_cluster_cpu=1.70%
+- non_kubernetes_overhead: avg_cpu_cores=0.23, pct_of_cluster_cpu=0.12%
+
+Average CPU Usage Across All Monitored Nodes (process-based):
+- direct_executor_usage: 5.35%
+- kubernetes_ceph_overhead: 1.70%
+- non_kubernetes_overhead: 0.12%

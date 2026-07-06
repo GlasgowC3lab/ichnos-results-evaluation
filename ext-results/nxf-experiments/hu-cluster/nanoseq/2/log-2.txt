@@ -1,0 +1,157 @@
+N E X T F L O W  ~  version 25.04.2
+Launching `/input/nanoseq/main.nf` [suspicious_babbage] DSL2 - revision: bda925dcc0
+
+
+-[2m----------------------------------------------------[0m-
+                                        [0;32m,--.[0;30m/[0;32m,-.[0m
+[0;34m        ___     __   __   __   ___     [0;32m/,-._.--~'[0m
+[0;34m  |\ | |__  __ /  ` /  \ |__) |__         [0;33m}  {[0m
+[0;34m  | \| |       \__, \__/ |  \ |___     [0;32m\`-._,-`-,[0m
+                                        [0;32m`._,._,'[0m
+[0;35m  nf-core/nanoseq v3.1.0[0m
+-[2m----------------------------------------------------[0m-
+[1mCore Nextflow options[0m
+  [0;34mrunName                   : [0;32msuspicious_babbage[0m
+  [0;34mlaunchDir                 : [0;32m/input[0m
+  [0;34mworkDir                   : [0;32m/input/data/work[0m
+  [0;34mprojectDir                : [0;32m/input/nanoseq[0m
+  [0;34muserName                  : [0;32mroot[0m
+  [0;34mprofile                   : [0;32mtest_full[0m
+  [0;34mconfigFiles               : [0;32m/input/nanoseq/nextflow.config, /experiments/experiment/nextflow_main.config, /experiments/experiment/nextflow_ceph.config, /experiments/experiment/nextflow_orig.config[0m
+
+[1mInput/output options[0m
+  [0;34minput                     : [0;32mhttps://raw.githubusercontent.com/nf-core/test-datasets/nanoseq/3.0/samplesheet/samplesheet_full.csv[0m
+  [0;34mprotocol                  : [0;32mcDNA[0m
+  [0;34moutdir                    : [0;32m/experiments/results/augur/nanoseq-2[0m
+
+[1mDemultiplexing options[0m
+  [0;34mskip_demultiplexing       : [0;32mtrue[0m
+
+[1mRNA fusion analysis options[0m
+  [0;34mjaffal_ref_dir            : [0;32mnull[0m
+  [0;34mskip_fusion_analysis      : [0;32mtrue[0m
+
+[1mRNA modification analysis options[0m
+  [0;34mskip_modification_analysis: [0;32mtrue[0m
+
+[1mReference genome options[0m
+  [0;34migenomes_base             : [0;32ms3://ngi-igenomes/igenomes/[0m
+
+[1mInstitutional config options[0m
+  [0;34mconfig_profile_name       : [0;32mFull test profile[0m
+  [0;34mconfig_profile_description: [0;32mFull test dataset to check pipeline function[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+-[2m----------------------------------------------------[0m-
+If you use nf-core/nanoseq for your analysis please cite:
+
+* The pipeline
+  https://doi.org/10.5281/zenodo.5740870
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/nanoseq/blob/master/CITATIONS.md
+-[2m----------------------------------------------------[0m-
+[b7/cd1c56] Submitted process > NFCORE_NANOSEQ:NANOSEQ:INPUT_CHECK:SAMPLESHEET_CHECK (samplesheet_full.csv)
+Staging foreign file: s3://ngi-igenomes/test-data/nanoseq/SGNex_A549_cDNA_replicate1_run2.fastq.gz
+Staging foreign file: s3://ngi-igenomes/igenomes/Homo_sapiens/Ensembl/GRCh37/Sequence/WholeGenomeFasta/genome.fa
+Staging foreign file: s3://ngi-igenomes/test-data/nanoseq/SGNex_A549_directcDNA_replicate3_run2.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/nanoseq/SGNex_A549_directcDNA_replicate5_run3.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/nanoseq/SGNex_K562_cDNA_replicate1_run3.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/nanoseq/SGNex_K562_directcDNA_replicate3_run1.fastq.gz
+Staging foreign file: s3://ngi-igenomes/test-data/nanoseq/SGNex_K562_directcDNA_replicate4_run2.fastq.gz
+[df/0ceef0] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:NANOPLOT (K562_R2)
+[be/b06910] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:FASTQC (K562_R2)
+[30/1555bb] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:FASTQC (A549_R1)
+[0e/cdb8c0] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:NANOPLOT (A549_R1)
+[30/5b89a2] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:FASTQC (A549_R3)
+[96/da7c6b] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:NANOPLOT (A549_R3)
+[43/e792e0] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:FASTQC (A549_R2)
+[9b/01290f] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:NANOPLOT (A549_R2)
+[65/e5dee8] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:SAMTOOLS_FAIDX (genome.fa)
+[14/32ad6c] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:SAMTOOLS_FAIDX (genome.fa)
+[c2/a49b1a] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:SAMTOOLS_FAIDX (genome.fa)
+[a0/33046c] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:SAMTOOLS_FAIDX (genome.fa)
+[eb/580db1] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:SAMTOOLS_FAIDX (genome.fa)
+[94/11222c] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:SAMTOOLS_FAIDX (genome.fa)
+[80/be7d62] Submitted process > NFCORE_NANOSEQ:NANOSEQ:PREPARE_GENOME:GET_CHROM_SIZES (genome.fa)
+[ba/981f4f] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:FASTQC (K562_R1)
+[d1/8936c3] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:NANOPLOT (K562_R1)
+[ee/7542ca] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_INDEX (genome.fa)
+[42/c96da7] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:NANOPLOT (K562_R3)
+[24/0c219b] Submitted process > NFCORE_NANOSEQ:NANOSEQ:QCFASTQ_NANOPLOT_FASTQC:FASTQC (K562_R3)
+[08/166ae6] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN (K562_R2)
+[67/7853b7] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN (K562_R1)
+[1c/a11a7f] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN (A549_R1)
+[b9/b5343f] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN (K562_R3)
+[0f/4728fe] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN (A549_R3)
+[91/8be4d5] Submitted process > NFCORE_NANOSEQ:NANOSEQ:ALIGN_MINIMAP2:MINIMAP2_ALIGN (A549_R2)
+[22/9fa620] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_VIEW_BAM (K562_R2)
+[0e/a4ea04] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_SORT (K562_R2)
+[35/cecda9] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_INDEX (K562_R2)
+[40/355255] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:BEDTOOLS_BAMBED (1)
+[13/aa6f61] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT (K562_R2)
+[b0/6ad73b] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS (K562_R2)
+[38/118e6b] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:BEDTOOLS_GENOMECOV (K562_R2)
+[1b/48d529] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS (K562_R2)
+[e5/c2e4b3] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:UCSC_BED12TOBIGBED (K562_R2)
+[28/59678d] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:UCSC_BEDGRAPHTOBIGWIG (K562_R2)
+[eb/823ef7] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_VIEW_BAM (A549_R3)
+[6d/46c8a2] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_SORT (A549_R3)
+[a4/beb19f] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_INDEX (A549_R3)
+[45/1f2fdc] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:BEDTOOLS_BAMBED (2)
+[96/883b64] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS (A549_R3)
+[20/b773ed] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:BEDTOOLS_GENOMECOV (A549_R3)
+[6b/80aa81] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT (A549_R3)
+[58/f0be12] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS (A549_R3)
+[5e/b2de58] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_VIEW_BAM (K562_R1)
+[af/0a423d] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_SORT (K562_R1)
+[77/95140a] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:UCSC_BED12TOBIGBED (A549_R3)
+[84/74082b] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_INDEX (K562_R1)
+[31/5a7050] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:UCSC_BEDGRAPHTOBIGWIG (A549_R3)
+[34/46a864] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT (K562_R1)
+[61/afe9d2] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:BEDTOOLS_GENOMECOV (K562_R1)
+[d8/2ab141] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:BEDTOOLS_BAMBED (3)
+[3b/e55fbc] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS (K562_R1)
+[37/082701] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS (K562_R1)
+[15/661e1b] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:UCSC_BED12TOBIGBED (K562_R1)
+[e4/36a44a] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:UCSC_BEDGRAPHTOBIGWIG (K562_R1)
+[00/06605a] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_VIEW_BAM (A549_R1)
+[f2/78b901] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_SORT (A549_R1)
+[2e/72dd63] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_INDEX (A549_R1)
+[95/e22740] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS (A549_R1)
+[9b/b84352] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:BEDTOOLS_BAMBED (4)
+[89/e2ec72] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:BEDTOOLS_GENOMECOV (A549_R1)
+[1e/9300e1] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT (A549_R1)
+[9d/ba6726] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS (A549_R1)
+[2f/ad9ab8] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:UCSC_BED12TOBIGBED (A549_R1)
+[13/cc82cb] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:UCSC_BEDGRAPHTOBIGWIG (A549_R1)
+[51/0b6127] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_VIEW_BAM (K562_R3)
+[14/296b9d] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_SORT (K562_R3)
+[48/8c4101] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_INDEX (K562_R3)
+[fa/5fa76c] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT (K562_R3)
+[d5/e89788] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS (K562_R3)
+[9f/6e7a97] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:BEDTOOLS_BAMBED (5)
+[e6/6c61ec] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:BEDTOOLS_GENOMECOV (K562_R3)
+[45/c5c258] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS (K562_R3)
+[2f/d11ff6] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:UCSC_BED12TOBIGBED (K562_R3)
+[71/095267] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:UCSC_BEDGRAPHTOBIGWIG (K562_R3)
+[d8/d20fd7] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_VIEW_BAM (A549_R2)
+[74/db66e8] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_SORT (A549_R2)
+[b7/ce8870] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:SAMTOOLS_INDEX (A549_R2)
+[20/b83258] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_FLAGSTAT (A549_R2)
+[49/c2c8bd] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:BEDTOOLS_GENOMECOV (A549_R2)
+[6c/223f27] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_IDXSTATS (A549_R2)
+[1a/aa0bc1] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:BEDTOOLS_BAMBED (6)
+[f5/08664a] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAM_SORT_INDEX_SAMTOOLS:BAM_STATS_SAMTOOLS:SAMTOOLS_STATS (A549_R2)
+Staging foreign file: s3://ngi-igenomes/igenomes/Homo_sapiens/Ensembl/GRCh37/Annotation/Genes/genes.gtf
+[02/abb5ab] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BAMBU (1)
+[85/04b279] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGBED:UCSC_BED12TOBIGBED (A549_R2)
+[8e/101597] Submitted process > NFCORE_NANOSEQ:NANOSEQ:BEDTOOLS_UCSC_BIGWIG:UCSC_BEDGRAPHTOBIGWIG (A549_R2)
+[9f/319e1e] Submitted process > NFCORE_NANOSEQ:NANOSEQ:DIFFERENTIAL_DESEQ2_DEXSEQ:DEXSEQ (1)
+[44/aa2fe1] Submitted process > NFCORE_NANOSEQ:NANOSEQ:DIFFERENTIAL_DESEQ2_DEXSEQ:DESEQ2 (1)
+[cf/3ead19] Submitted process > NFCORE_NANOSEQ:NANOSEQ:CUSTOM_DUMPSOFTWAREVERSIONS (1)
+[8c/a5ef84] Submitted process > NFCORE_NANOSEQ:NANOSEQ:MULTIQC (1)
+-[0;35m[nf-core/nanoseq][0;32m Pipeline completed successfully[0m-

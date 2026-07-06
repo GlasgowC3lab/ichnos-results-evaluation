@@ -1,0 +1,25 @@
+{
+  "by_type": {
+    "DRAM": {
+      "intervals_clipped": 0,
+      "intervals_requested": 37,
+      "intervals_skipped_outside_range": 0,
+      "nodes": {
+        "ip172311173": 0.6401198564508004,
+        "ip1723112170": 0.6040535049995444
+      },
+      "total_kwh": 1.2441733614503447
+    },
+    "package": {
+      "intervals_clipped": 0,
+      "intervals_requested": 37,
+      "intervals_skipped_outside_range": 0,
+      "nodes": {
+        "ip172311173": 1.7395043921601387,
+        "ip1723112170": 1.7184401621504066
+      },
+      "total_kwh": 3.4579445543105454
+    }
+  },
+  "rapl_max_value": 262144000000
+}

@@ -1,0 +1,1 @@
+2025-11-18 23:36:15	4h 13m 55s	suspicious_mercator	OK	f421ddc35d81a0561685927c03e03995	cfc34245-85d2-4424-990f-f79a01e2a1dd	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config

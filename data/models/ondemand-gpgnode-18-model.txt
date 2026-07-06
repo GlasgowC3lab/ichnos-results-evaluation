@@ -1,0 +1,2 @@
+models/ondemand-gpgnode-18-bg-model.txt
+[ 0.6591939393939394, 57.9087878787879 ]

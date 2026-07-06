@@ -1,0 +1,18 @@
+{
+  "embodied_carbon_gco2e": 2.0723747449108916,
+  "energy_exc_pue_kwh": 0.5812469434284934,
+  "energy_inc_pue_kwh": 0.6917794538803603,
+  "ichnos_config_path": "/home/ubuntu/ichnos/data/ichnos_traces/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-1_proc_direct_plus_k8s_trace_ichnos_config.json",
+  "memory_energy_exc_pue_kwh": 0.05871023734426531,
+  "memory_energy_inc_pue_kwh": 0.05871023734426531,
+  "node_governors": {
+    "ip-172-31-1-173": "performance",
+    "ip-172-31-12-170": "performance"
+  },
+  "operational_carbon_gco2e": 0.7504896912246256,
+  "raw_summary": "Carbon Footprint Trace:\n- carbon-intensity: 1.0\n- power-usage-effectiveness: 1.0\n- power model selected: performance_linear\n- memory-power-draw: 0.392\n\nIchnos Output:\n- Static Energy Consumption (exc. PUE): 0.5812469434284934kWh\n- Energy Consumption (exc. PUE): 0.6917794538803603kWh\n- Energy Consumption (inc. PUE): 0.6917794538803603kWh\n- Task Memory Energy Consumption (exc. PUE): 0.05871023734426531kWh\n- Task Memory Energy Consumption (inc. PUE): 0.05871023734426531kWh\n- Operational Carbon Emissions: 0.7504896912246256gCO2e\n- Embodied Carbon Emissions: 2.0723747449108916gCO2e\n- Total Carbon Emissions: 2.822864436135517gCO2e\n",
+  "stderr": "",
+  "stdout": "Node ip-172-31-12-170 with power model performance_linear selected\nNode ip-172-31-1-173 with power model performance_linear selected\nEnergy Consumption (exc. PUE): 0.6917794538803603kWh\nEnergy Consumption (inc. PUE): 0.6917794538803603kWh\nTask Memory Energy Consumption (exc. PUE): 0.05871023734426531kWh\nTask Memory Energy Consumption (inc. PUE): 0.05871023734426531kWh\nOperational Carbon Emissions: 0.7504896912246256gCO2e\nEmbodied Carbon Emissions: 2.0723747449108916gCO2e\nTotal Carbon Emissions: 2.822864436135517gCO2e\n",
+  "summary_path": "/home/ubuntu/ichnos/output/nf-core-atacseq_nfcore-atacseq-test-full-20260608T084233Z-1_proc_direct_plus_k8s_trace-1-performance_linear-summary.txt",
+  "total_carbon_gco2e": 2.822864436135517
+}

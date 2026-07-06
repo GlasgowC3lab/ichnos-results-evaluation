@@ -1,0 +1,1 @@
+2025-11-18 15:11:01	4h 11m 56s	sad_feynman	OK	f421ddc35d81a0561685927c03e03995	dddf6863-a975-471f-ac70-dfbfa8059bd5	nextflow run /input/rnaseq -profile test_full -c /experiments/experiment/rnaseq/nextflow.config -c /experiments/experiment/nextflow_orig.config -c /experiments/experiment/nextflow_ceph.config

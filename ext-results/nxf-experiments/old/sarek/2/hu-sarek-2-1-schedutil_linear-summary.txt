@@ -1,0 +1,17 @@
+Carbon Footprint Trace:
+- carbon-intensity: 1.0
+- power-usage-effectiveness: 1.0
+- power model selected: schedutil_linear
+- memory-power-draw: 0.392
+
+Cloud Carbon Footprint Method:
+- Energy Consumption (exc. PUE): 2.567438444537367kWh
+- Energy Consumption (inc. PUE): 2.567438444537367kWh
+- Memory Energy Consumption (exc. PUE): 0.08386938942961523kWh
+- Memory Energy Consumption (inc. PUE): 0.08386938942961523kWh
+- Operational Carbon Emissions: 1.1607223612397133gCO2e
+- Embodied Carbon Emissions: 0.0gCO2e
+- Total Carbon Emissions: 1.1607223612397133gCO2e
+
+Reserved Memory Energy Consumption: 0.45203032685185035kWh
+% CPU [66.77%] | % Memory [33.23%]

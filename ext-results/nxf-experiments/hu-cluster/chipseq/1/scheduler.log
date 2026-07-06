@@ -1,0 +1,145 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< commonworkflowscheduler:cws-k8s-scheduler >--------------
+[INFO] Building cws-k8s-scheduler 1.2-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.4.2:run (default-cli) > test-compile @ cws-k8s-scheduler >>>
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.2:build-info (build-info) @ cws-k8s-scheduler ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ cws-k8s-scheduler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ cws-k8s-scheduler ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ cws-k8s-scheduler ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /build/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ cws-k8s-scheduler ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.4.2:run (default-cli) < test-compile @ cws-k8s-scheduler <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.2:run (default-cli) @ cws-k8s-scheduler ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.2)
+
+2025-11-19 04:06:57.953  INFO 75 --- [           main] cws.k8s.scheduler.Main                   : Starting Main using Java 18.0.2.1 on workflow-scheduler with PID 75 (/build/target/classes started by root in /build)
+2025-11-19 04:06:57.956  INFO 75 --- [           main] cws.k8s.scheduler.Main                   : No active profile set, falling back to default profiles: default
+2025-11-19 04:06:58.948  INFO 75 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-11-19 04:06:58.959  INFO 75 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-19 04:06:58.959  INFO 75 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-11-19 04:06:59.042  INFO 75 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-19 04:06:59.043  INFO 75 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1041 ms
+2025-11-19 04:06:59.100  INFO 75 --- [           main] cws.k8s.scheduler.Main                   : 
+
+
+================================================================================================
+=                                                                                              =
+=  Common Workflow Scheduler for Kubernetes 1.2-SNAPSHOT (19/11/25-04:06:55)                   =
+=                                                                                              =
+=  If you use the Common Workflow Scheduler for research purposes, please cite the following:  =
+=  Lehmann Fabian, Jonathan Bader, Friedrich Tschirpke, Lauritz Thamsen, and Ulf Leser.        =
+=  "How Workflow Engines Should Talk to Resource Managers: A Proposal for a Common Workflow    =
+=  Scheduling Interface." In 2023 IEEE/ACM 23rd International Symposium on Cluster, Cloud and  =
+=  Internet Computing (CCGrid). Bangalore, India, 2023.                                        =
+=                                                                                              =
+================================================================================================
+
+
+2025-11-19 04:06:59.786  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-master-c20 has RAM: 269785079808 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-master-c21 has RAM: 269785071616 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-master-c22 has RAM: 269785075712 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c23 has RAM: 269785071616 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c24 has RAM: 269785088000 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c25 has RAM: 269785079808 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c26 has RAM: 269785083904 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c27 has RAM: 269785083904 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c28 has RAM: 269785083904 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c29 has RAM: 269785088000 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c30 has RAM: 134594351104 and CPU: 32
+2025-11-19 04:06:59.788  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c31 has RAM: 134594342912 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c32 has RAM: 134594355200 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c33 has RAM: 134594359296 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c34 has RAM: 269780234240 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c35 has RAM: 269780234240 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c36 has RAM: 269780246528 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c37 has RAM: 269780242432 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c38 has RAM: 269780242432 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c39 has RAM: 269780238336 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c40 has RAM: 269780230144 and CPU: 32
+2025-11-19 04:06:59.789  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c41 has RAM: 269780238336 and CPU: 32
+2025-11-19 04:06:59.790  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c42 has RAM: 269780246528 and CPU: 32
+2025-11-19 04:06:59.790  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c43 has RAM: 269780246528 and CPU: 32
+2025-11-19 04:06:59.790  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c44 has RAM: 269782089728 and CPU: 32
+2025-11-19 04:06:59.790  INFO 75 --- [           main] cws.k8s.scheduler.model.NodeWithAlloc    : Node hu-worker-c45 has RAM: 269782102016 and CPU: 32
+2025-11-19 04:07:00.429  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-master-c20 was added
+2025-11-19 04:07:00.429  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-master-c21 was added
+2025-11-19 04:07:00.430  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-master-c22 was added
+2025-11-19 04:07:00.430  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c23 was added
+2025-11-19 04:07:00.430  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c24 was added
+2025-11-19 04:07:00.430  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c25 was added
+2025-11-19 04:07:00.430  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c26 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c27 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c28 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c29 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c30 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c31 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c32 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c33 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c34 was added
+2025-11-19 04:07:00.431  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c35 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c36 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c37 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c38 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c39 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c40 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c41 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c42 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c43 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c44 was added
+2025-11-19 04:07:00.432  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : New Node hu-worker-c45 was added
+2025-11-19 04:07:00.730  INFO 75 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2025-11-19 04:07:00.979  INFO 75 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2025-11-19 04:07:01.009  INFO 75 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-11-19 04:07:01.020  INFO 75 --- [           main] cws.k8s.scheduler.Main                   : Started Main in 3.378 seconds (JVM running for 3.66)
+2025-11-19 04:07:23.206  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-lk5ms
+2025-11-19 04:07:23.271  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-rvfws
+2025-11-19 04:07:23.279  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-wn2tz
+2025-11-19 04:07:23.287  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-pz9f6
+2025-11-19 04:07:23.295  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-ckr8x
+2025-11-19 04:07:23.300  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-ptrrq
+2025-11-19 04:07:23.315  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-xw8ft
+2025-11-19 04:07:23.317  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-j4cxx
+2025-11-19 04:07:23.328  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-ck7bh
+2025-11-19 04:07:23.355  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-qcdqs
+2025-11-19 04:07:23.372  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-z9c7w
+2025-11-19 04:07:23.375  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-6nl6t
+2025-11-19 04:07:23.452  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-8jgs8
+2025-11-19 04:07:23.500  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-srt7c
+2025-11-19 04:07:23.503  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-5dhjw
+2025-11-19 04:07:23.507  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-gtmpk
+2025-11-19 04:07:23.510  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-rmlz7
+2025-11-19 04:07:23.512  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-4lhv9
+2025-11-19 04:07:23.712  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-6tfxn
+2025-11-19 04:07:23.727  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-bjxln
+2025-11-19 04:07:23.760  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-n92t8
+2025-11-19 04:07:23.765  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-q244v
+2025-11-19 04:07:23.787  INFO 75 --- [pool-1-thread-2] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-b6zq5
+2025-11-19 04:07:24.106  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-gxbv7
+2025-11-19 04:07:25.141  INFO 75 --- [pool-1-thread-1] c.k8s.scheduler.client.KubernetesClient  : Pod has released its resources: workflow-prepare-kdj75

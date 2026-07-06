@@ -1,0 +1,10 @@
+sample,single_end,fastq_1,fastq_2,antibody,control
+H3K4me1_LAPC4_Control_REP1_T1,1,/workspace/inputs/SRR11518273.fastq.gz,,,
+H3K4me1_LAPC4_Control_REP2_T1,1,/workspace/inputs/SRR11518274.fastq.gz,,,
+H3K4me1_LAPC4_Control_REP3_T1,1,/workspace/inputs/SRR11518275.fastq.gz,,,
+H3K4me1_LAPC4_Daro_REP1_T1,1,/workspace/inputs/SRR11518276.fastq.gz,,H3K4me1,H3K4me1_LAPC4_Control_REP1
+H3K4me1_LAPC4_Daro_REP2_T1,1,/workspace/inputs/SRR11518277.fastq.gz,,H3K4me1,H3K4me1_LAPC4_Control_REP2
+H3K4me1_LAPC4_Daro_REP3_T1,1,/workspace/inputs/SRR11518278.fastq.gz,,H3K4me1,H3K4me1_LAPC4_Control_REP3
+H3K4me1_LAPC4_R1881_REP1_T1,1,/workspace/inputs/SRR11518279.fastq.gz,,H3K4me1,H3K4me1_LAPC4_Control_REP1
+H3K4me1_LAPC4_R1881_REP2_T1,1,/workspace/inputs/SRR11518280.fastq.gz,,H3K4me1,H3K4me1_LAPC4_Control_REP2
+H3K4me1_LAPC4_R1881_REP3_T1,1,/workspace/inputs/SRR11518281.fastq.gz,,H3K4me1,H3K4me1_LAPC4_Control_REP3
