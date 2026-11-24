@@ -70,7 +70,7 @@ def make_model(node, governor, background=False):
     if background:
         ts_path = f'{node}-bg/ts-{node.replace('-', '')}-{governor}-ITER.csv'
     else:
-        ts_path = f'{node}/ts-ITER.csv'
+        ts_path = f'{node}/ts-{node.replace('-', '')}-{governor}-ITER.csv'
     node_stats = {}
     (node_stats[node], mem_draw) = get_average_ts_files(ts_path)
     x = range(0,110,10)
@@ -84,21 +84,42 @@ def make_model(node, governor, background=False):
     return (model_linear_v2, mem_draw, (min(y_arr), max(y_arr)))
 
 
+def make_poly_model(node, governor, background=False):
+    if background:
+        ts_path = f'{node}-bg/ts-{node.replace('-', '')}-{governor}-ITER.csv'
+    else:
+        ts_path = f'{node}/ts-{node.replace('-', '')}-{governor}-ITER.csv'
+    node_stats = {}
+    (node_stats[node], mem_draw) = get_average_ts_files(ts_path)
+
+    x = range(0,110,10)
+    y = node_stats[node].values()
+    y_arr = list(y)
+    coefficients = np.polyfit(x, y_arr, 3)
+    p = np.poly1d(coefficients)
+    xp = np.linspace(0, 100)
+    model = Polynomial(p)
+
+    return (model, mem_draw, (min(y_arr), max(y_arr)))
+
+
 # update to store in the format expected by ichnos / JSON ? or easily parseable record
 # add versioning, i.e. date/timestamp for it, version like 1.0 and then increment -> 1.1 -- 1.11+
-def write_output(node, governor, model):
+def write_output(node, governor, model, poly_model):
     filename = f'models/{governor}-{node}-bg-model.txt'
 
     with open(filename, 'w') as f:
         model_str = str(model)
         f.write(filename + '\n')
         f.write(model_str + '\n')
+        f.write(str(poly_model) + '\n')
 
 
 if __name__ == '__main__':
     args = sys.argv[1:]
     node = args[0].strip()
     governor = args[1].strip()
-    background = bool(args[2].strip())
+    background = len(args) > 2
     (model, mem_draw, minmax) = make_model(node, governor, background)
-    write_output(node, governor, model)
+    (poly_model, _, _) = make_poly_model(node, governor, background)
+    write_output(node, governor, model, poly_model)
